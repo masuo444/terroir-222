@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>料金詳細 - テロワールハブ | FOMUS</title>
+    <meta name="description" content="テロワールハブの詳細な料金プランと各サービス内容をご紹介。無料カタログ制作から本格的な海外展開まで、段階的にサポートします。">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', sans-serif;
+            line-height: 1.6;
+            color: #0f0f0f;
+            background: 
+                conic-gradient(from 180deg at 50% 50%, 
+                    rgba(77, 182, 172, 0.03) 0deg, 
+                    rgba(255, 255, 255, 0.08) 60deg, 
+                    rgba(0, 105, 92, 0.02) 120deg, 
+                    rgba(255, 255, 255, 0.08) 180deg, 
+                    rgba(77, 182, 172, 0.03) 240deg, 
+                    rgba(255, 255, 255, 0.08) 300deg, 
+                    rgba(77, 182, 172, 0.03) 360deg
+                ),
+                linear-gradient(135deg, #ffffff 0%, #fafffe 30%, #ffffff 100%);
+            background-attachment: fixed;
+            font-weight: 400;
+            letter-spacing: -0.015em;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            margin: -30px -30px 80px -30px;
+            padding: 80px 60px;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(0, 61, 59, 0.98) 0%, 
+                    rgba(0, 89, 86, 0.95) 30%, 
+                    rgba(0, 77, 74, 0.98) 70%, 
+                    rgba(0, 105, 92, 0.96) 100%
+                ),
+                radial-gradient(circle at 30% 70%, rgba(77, 182, 172, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 80% 20%, rgba(128, 203, 196, 0.1) 0%, transparent 50%);
+            color: #ffffff;
+            border-radius: 0 0 60px 60px;
+            box-shadow: 
+                0 32px 80px rgba(0, 61, 59, 0.25),
+                0 8px 32px rgba(0, 61, 59, 0.15);
+        }
+        
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        .back-nav {
+            margin-bottom: 40px;
+        }
+        
+        .back-nav a {
+            display: inline-flex;
+            align-items: center;
+            color: #00695c;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 50px;
+            background: rgba(77, 182, 172, 0.1);
+            border: 1px solid rgba(77, 182, 172, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .back-nav a:hover {
+            background: rgba(77, 182, 172, 0.15);
+            transform: translateX(-4px);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .pricing-card {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(255, 255, 255, 0.9) 0%, 
+                    rgba(247, 250, 252, 0.95) 100%
+                );
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(77, 182, 172, 0.1);
+            box-shadow: 
+                0 20px 60px rgba(0, 105, 92, 0.08),
+                0 4px 20px rgba(0, 105, 92, 0.05);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 32px 80px rgba(0, 105, 92, 0.12),
+                0 8px 32px rgba(0, 105, 92, 0.08);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid #4db6ac;
+            position: relative;
+        }
+        
+        .pricing-card.featured::before {
+            content: '★ 人気';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #00695c, #4db6ac);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* プランごとの色分け */
+        .pricing-card.starter {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(224, 247, 250, 0.95) 0%, 
+                    rgba(255, 255, 255, 0.98) 100%
+                );
+            border: 1px solid rgba(128, 203, 196, 0.3);
+        }
+        
+        .pricing-card.starter .plan-name {
+            color: #4db6ac;
+        }
+        
+        .pricing-card.growth {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(0, 105, 92, 0.05) 0%, 
+                    rgba(77, 182, 172, 0.08) 100%
+                );
+            border: 2px solid #00695c;
+        }
+        
+        .pricing-card.growth .plan-name {
+            color: #00695c;
+        }
+        
+        .pricing-card.brand {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(255, 215, 0, 0.05) 0%, 
+                    rgba(255, 239, 204, 0.1) 100%
+                );
+            border: 2px solid rgba(218, 165, 32, 0.5);
+            position: relative;
+            overflow: visible;
+        }
+        
+        .pricing-card.brand::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(135deg, #daa520, #ffd700, #daa520);
+            border-radius: 24px;
+            z-index: -1;
+            opacity: 0.2;
+        }
+        
+        .pricing-card.brand::before {
+            content: '限定特価';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ff4444, #ff6b6b);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
+            animation: pulse 2s infinite;
+            z-index: 10;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+        
+        .pricing-card.brand .plan-name {
+            background: linear-gradient(135deg, #b8860b, #daa520);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .pricing-card.brand .plan-price {
+            position: relative;
+        }
+        
+        .pricing-card.brand .plan-period {
+            position: relative;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .pricing-card.brand .plan-period::before {
+            content: '通常50万円';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #999;
+            text-decoration: line-through;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .pricing-card.brand .plan-period::after {
+            content: '40%OFF!';
+            position: absolute;
+            top: -45px;
+            right: -10px;
+            background: #ff4444;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transform: rotate(15deg);
+            box-shadow: 0 3px 8px rgba(255, 68, 68, 0.3);
+        }
+        
+        /* キャッチコピーのスタイル */
+        .plan-catchcopy {
+            background: rgba(77, 182, 172, 0.1);
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #00695c;
+        }
+        
+        .pricing-card.starter .plan-catchcopy {
+            background: rgba(128, 203, 196, 0.15);
+            color: #00695c;
+        }
+        
+        .pricing-card.growth .plan-catchcopy {
+            background: rgba(0, 105, 92, 0.1);
+            color: #004d47;
+        }
+        
+        .pricing-card.brand .plan-catchcopy {
+            background: rgba(255, 215, 0, 0.1);
+            color: #8b6914;
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00695c;
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #0f0f0f;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .plan-price.free {
+            background: linear-gradient(135deg, #4db6ac, #80cbc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .plan-period {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .plan-features li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .plan-features li::before {
+            content: "✓";
+            color: #4db6ac;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(77, 182, 172, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .plan-cta {
+            width: 100%;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .plan-cta.primary {
+            background: linear-gradient(135deg, #00695c, #4db6ac);
+            color: white;
+            box-shadow: 0 8px 24px rgba(0, 105, 92, 0.3);
+        }
+        
+        .plan-cta.primary:hover {
+            background: linear-gradient(135deg, #004d47, #00695c);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 105, 92, 0.4);
+        }
+        
+        .plan-cta.secondary {
+            background: rgba(77, 182, 172, 0.1);
+            color: #00695c;
+            border: 2px solid rgba(77, 182, 172, 0.3);
+        }
+        
+        .plan-cta.secondary:hover {
+            background: rgba(77, 182, 172, 0.2);
+            border-color: rgba(77, 182, 172, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .comparison-section {
+            margin: 80px 0;
+        }
+        
+        .comparison-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00695c;
+            margin-bottom: 48px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 105, 92, 0.1);
+            border: 1px solid rgba(77, 182, 172, 0.1);
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(77, 182, 172, 0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #00695c, #4db6ac);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .comparison-table td {
+            font-size: 0.95rem;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: rgba(77, 182, 172, 0.03);
+        }
+        
+        .check {
+            color: #4db6ac;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .cross {
+            color: #ccc;
+            font-weight: 400;
+        }
+        
+        .faq-section {
+            margin: 80px 0;
+        }
+        
+        .faq-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00695c;
+            margin-bottom: 48px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(77, 182, 172, 0.1);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 105, 92, 0.05);
+        }
+        
+        .faq-question {
+            padding: 24px;
+            font-weight: 600;
+            color: #00695c;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(77, 182, 172, 0.05);
+        }
+        
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: #444;
+            line-height: 1.6;
+            border-top: 1px solid rgba(77, 182, 172, 0.1);
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #00695c, #4db6ac);
+            color: white;
+            padding: 60px;
+            border-radius: 24px;
+            text-align: center;
+            margin: 80px 0;
+        }
+        
+        .contact-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .contact-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+        
+        .contact-cta {
+            display: inline-block;
+            padding: 16px 40px;
+            background: white;
+            color: #00695c;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* モーダルウィンドウのスタイル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            position: relative;
+            background: white;
+            margin: 5% auto;
+            padding: 0;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 24px;
+            box-shadow: 0 32px 80px rgba(0, 105, 92, 0.25);
+            animation: slideIn 0.3s ease;
+            overflow: hidden;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #00695c 0%, #4db6ac 100%);
+            color: white;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .modal-header .plan-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: white;
+            font-size: 32px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        
+        .close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 40px;
+        }
+        
+        .modal-section {
+            margin-bottom: 30px;
+        }
+        
+        .modal-section h3 {
+            color: #00695c;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .modal-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .modal-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(77, 182, 172, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        
+        .modal-features li::before {
+            content: "✓";
+            color: #4db6ac;
+            font-weight: 700;
+            margin-right: 12px;
+            background: rgba(77, 182, 172, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .modal-price {
+            background: linear-gradient(135deg, #f0fdfa 0%, #e0f7fa 100%);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .modal-price .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00695c;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .modal-price .period {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .modal-cta {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(77, 182, 172, 0.1);
+        }
+        
+        .modal-cta .btn-contact {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, #00695c 0%, #4db6ac 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 105, 92, 0.3);
+        }
+        
+        .modal-cta .btn-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 105, 92, 0.4);
+        }
+        
+        /* 最高レベルのモバイル対応UI */
+        @media (max-width: 768px) {
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            
+            .container {
+                padding: 16px;
+                overflow-x: hidden;
+            }
+            
+            .header {
+                padding: 60px 24px 50px;
+                margin: -16px -16px 48px -16px;
+                border-radius: 0 0 32px 32px;
+                box-shadow: 
+                    0 20px 60px rgba(0, 61, 59, 0.2),
+                    0 8px 24px rgba(0, 61, 59, 0.12);
+            }
+            
+            .header h1 {
+                font-size: 2.6rem;
+                line-height: 1.15;
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                background: linear-gradient(135deg, #ffffff 0%, #e0fffa 50%, #ffffff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+            }
+            
+            .header .subtitle {
+                font-size: 1rem;
+                line-height: 1.5;
+                opacity: 0.95;
+            }
+            
+            .back-nav {
+                margin-bottom: 32px;
+                padding: 0;
+            }
+            
+            .back-nav a {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                border-radius: 50px;
+                backdrop-filter: blur(10px);
+                box-shadow: 
+                    0 4px 12px rgba(77, 182, 172, 0.15),
+                    0 1px 0 rgba(255, 255, 255, 0.5) inset;
+            }
+            
+            .plans-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .plan-card {
+                padding: 36px 24px;
+                border-radius: 24px;
+                box-shadow: 
+                    0 12px 36px rgba(0, 105, 92, 0.12),
+                    0 4px 12px rgba(0, 61, 59, 0.08);
+                backdrop-filter: blur(20px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .plan-card:active {
+                transform: scale(0.98);
+            }
+            
+            .plan-title {
+                font-size: 1.7rem;
+                line-height: 1.25;
+                text-align: center;
+            }
+            
+            .plan-price {
+                font-size: 2.8rem;
+                text-align: center;
+                background: linear-gradient(135deg, #00695c 0%, #4db6ac 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                filter: drop-shadow(0 2px 4px rgba(0, 105, 92, 0.2));
+            }
+            
+            .plan-description {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                text-align: center;
+                color: #555;
+                margin: 16px 0 24px;
+            }
+            
+            .features-list {
+                margin: 24px 0;
+            }
+            
+            .features-list li {
+                padding: 14px 0;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            
+            .features-list li::before {
+                content: "✓";
+                color: #4db6ac;
+                font-weight: 700;
+                font-size: 1rem;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: rgba(77, 182, 172, 0.15);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                margin-top: 1px;
+            }
+            
+            .plan-button {
+                padding: 18px 32px;
+                font-size: 1rem;
+                width: 100%;
+                border-radius: 50px;
+                font-weight: 600;
+                box-shadow: 
+                    0 8px 24px rgba(0, 105, 92, 0.2),
+                    0 3px 8px rgba(77, 182, 172, 0.15);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .plan-button:active {
+                transform: scale(0.98);
+            }
+            
+            .comparison-section {
+                padding: 44px 24px;
+                margin: 48px -16px;
+                border-radius: 32px;
+                box-shadow: 
+                    0 16px 48px rgba(0, 105, 92, 0.1),
+                    0 4px 16px rgba(0, 61, 59, 0.06);
+            }
+            
+            .comparison-section h2 {
+                font-size: 2rem;
+                margin-bottom: 32px;
+                text-align: center;
+                line-height: 1.3;
+            }
+            
+            .comparison-table {
+                font-size: 0.85rem;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 
+                    0 8px 24px rgba(0, 105, 92, 0.08),
+                    0 2px 8px rgba(0, 61, 59, 0.04);
+            }
+            
+            .comparison-table th {
+                padding: 16px 12px;
+                font-size: 0.8rem;
+                text-align: center;
+                font-weight: 600;
+            }
+            
+            .comparison-table td {
+                padding: 14px 12px;
+                text-align: center;
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+            
+            .faq-section {
+                padding: 44px 24px;
+                margin: 48px -16px;
+                border-radius: 32px;
+                box-shadow: 
+                    0 16px 48px rgba(0, 105, 92, 0.1),
+                    0 4px 16px rgba(0, 61, 59, 0.06);
+            }
+            
+            .faq-section h2 {
+                font-size: 2rem;
+                margin-bottom: 32px;
+                text-align: center;
+                line-height: 1.3;
+            }
+            
+            .faq-item {
+                margin: 20px 0;
+                padding: 28px 24px;
+                border-radius: 20px;
+                box-shadow: 
+                    0 8px 24px rgba(0, 105, 92, 0.08),
+                    0 2px 8px rgba(0, 61, 59, 0.04);
+                backdrop-filter: blur(20px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .faq-item:active {
+                transform: scale(0.98);
+            }
+            
+            .faq-question {
+                font-size: 1.1rem;
+                margin-bottom: 16px;
+                line-height: 1.4;
+                font-weight: 600;
+            }
+            
+            .faq-answer {
+                font-size: 0.95rem;
+                line-height: 1.65;
+                color: #555;
+            }
+            
+            .cta-section {
+                padding: 60px 24px;
+                margin: 48px -16px;
+                border-radius: 32px;
+                box-shadow: 
+                    0 24px 64px rgba(0, 61, 59, 0.25),
+                    0 8px 24px rgba(0, 77, 74, 0.15);
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+                margin-bottom: 24px;
+                line-height: 1.25;
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .cta-subtitle {
+                font-size: 1rem;
+                margin-bottom: 32px;
+                line-height: 1.6;
+                opacity: 0.95;
+            }
+            
+            .cta-button {
+                padding: 20px 40px;
+                font-size: 1.05rem;
+                border-radius: 50px;
+                font-weight: 600;
+                box-shadow: 
+                    0 8px 24px rgba(255, 255, 255, 0.25),
+                    0 3px 8px rgba(255, 255, 255, 0.15);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+                display: block;
+            }
+            
+            .cta-button:active {
+                transform: scale(0.98);
+            }
+            
+            .footer {
+                padding: 48px 24px;
+                margin-top: 60px;
+                border-radius: 32px 32px 0 0;
+                box-shadow: 
+                    0 -8px 32px rgba(0, 0, 0, 0.08),
+                    0 -2px 8px rgba(0, 0, 0, 0.04);
+            }
+            
+            .contact-info div {
+                font-size: 1rem;
+                margin: 14px 0;
+                line-height: 1.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>料金詳細</h1>
+            <div class="subtitle">
+                段階的なプランで、無理なく海外展開を始められます
+            </div>
+        </header>
+        
+        <div class="back-nav">
+            <a href="index.html">← メインページに戻る</a>
+        </div>
+        
+        <div class="pricing-grid">
+            <!-- プラン1: 無料カタログ -->
+            <div class="pricing-card starter">
+                <div class="plan-name">お試しプラン</div>
+                <div class="plan-price free">FREE</div>
+                <div class="plan-period">初期費用・月額費用なし</div>
+                <div class="plan-catchcopy">👉 海外進出を"無料で体験"</div>
+                <ul class="plan-features">
+                    <li>英語カタログ制作（1商品）</li>
+                    <li>テロワールハブサイト掲載</li>
+                    <li>海外バイヤー向け表示</li>
+                    <li>基本的な翻訳サポート</li>
+                    <li>問い合わせ対応サポート</li>
+                </ul>
+                <button class="plan-cta primary" onclick="showPlanDetails('starter')">無料相談</button>
+            </div>
+            
+            <!-- プラン2: 成長プラン -->
+            <div class="pricing-card growth featured">
+                <div class="plan-name">成長プラン</div>
+                <div class="plan-price">20万円</div>
+                <div class="plan-period">月額</div>
+                <div class="plan-catchcopy">👉 本格的に海外販売を拡大したい方向け</div>
+                <ul class="plan-features">
+                    <li>英語カタログ制作（10商品）</li>
+                    <li>広告効果測定・改善</li>
+                    <li>ターゲティング設定最適化</li>
+                    <li>競合分析レポート</li>
+                    <li>月次戦略ミーティング</li>
+                    <li>英語での顧客対応代行</li>
+                </ul>
+                <button class="plan-cta primary" onclick="showPlanDetails('growth')">無料相談</button>
+            </div>
+            
+            <!-- プラン3: ブランド拡大 -->
+            <div class="pricing-card brand">
+                <div class="plan-name">ブランド拡大プラン</div>
+                <div class="plan-price">30万円</div>
+                <div class="plan-period">月額</div>
+                <div class="plan-catchcopy">👉 自社公式サイトを海外仕様にカスタマイズ</div>
+                <ul class="plan-features">
+                    <li>英語カタログ制作（20商品）</li>
+                    <li>多言語対応サイト制作</li>
+                    <li>海外決済システム導入</li>
+                    <li>SEO最適化（各国対応）</li>
+                    <li>レスポンシブデザイン</li>
+                    <li>CMS導入 & 操作研修</li>
+                    <li>セキュリティ（SSL）対応</li>
+                    <li>アクセス解析</li>
+                </ul>
+                <button class="plan-cta secondary" onclick="showPlanDetails('brand')">無料相談</button>
+            </div>
+        </div>
+        
+        <!-- 比較表 -->
+        <div class="comparison-section">
+            <h2 class="comparison-title">プラン比較表</h2>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>機能</th>
+                            <th>お試しプラン</th>
+                            <th>成長プラン</th>
+                            <th>ブランド拡大プラン</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>英語カタログ制作</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Instagram広告運用</td>
+                            <td><span class="cross">−</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>多言語サイト制作</td>
+                            <td><span class="cross">−</span></td>
+                            <td><span class="cross">−</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>海外決済システム</td>
+                            <td><span class="cross">−</span></td>
+                            <td><span class="cross">−</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2 class="faq-title">よくある質問</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q. 無料プランに期間制限はありますか？
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    A. 無料プランに期間制限はございません。カタログ制作が完了すれば、継続的にテロワールハブサイトに掲載され、海外バイヤーからの問い合わせを受け付けます。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q. Instagram広告の最低予算はいくらですか？
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    A. 月額10万円からご利用いただけます。この金額には広告費（約8万円）と運用費（約2万円）が含まれており、効果的な海外向け広告配信が可能です。また、広告費用は必要に応じて、追加することで、更なるユーザー認知にもつながります。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q. サイト制作にはどのくらいの期間がかかりますか？
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    A. 通常1〜2週間程度のお時間をいただいております。お客様からの素材提供状況や、カスタマイズ内容により期間は前後する場合があります。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q. 海外の法的手続きはどこまでサポートしてもらえますか？
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    A. フルサポートプランでは、輸出入手続き、商標登録、現地法人設立サポートなど、FOMUSドバイ法人を通じて包括的にサポートいたします。具体的な内容はお客様の事業内容に応じてカスタマイズいたします。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q. 途中でプランを変更することは可能ですか？
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    A. はい、いつでもプランのアップグレードが可能です。
+                </div>
+            </div>
+        </div>
+        
+        <!-- お問い合わせセクション -->
+        <div class="contact-section">
+            <h2 class="contact-title">まずは無料相談から</h2>
+            <div class="contact-subtitle">
+                お客様の事業内容に最適なプランをご提案いたします
+            </div>
+            <a href="mailto:fomus.official@gmail.com?subject=%E3%80%90%E3%83%86%E3%83%AD%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%8F%E3%83%96%E3%80%91%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6&body=%E3%80%90%E4%BC%9A%E7%A4%BE%E6%83%85%E5%A0%B1%E3%80%91%0A%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E3%81%94%E6%8B%85%E5%BD%93%E8%80%85%E5%90%8D%EF%BC%9A%0A%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%EF%BC%9A%0A%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0A%0A%E3%80%90%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%B8%E3%81%AE%E3%81%94%E8%B3%AA%E5%95%8F%E3%80%91%0A%0A%0A%E3%80%90%E3%81%94%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9%E3%80%91%0A%0A%0A%E3%80%90%E5%B8%8C%E6%9C%9B%E9%80%A3%E7%B5%A1%E6%96%B9%E6%B3%95%E3%80%91%0A%E2%98%90%20%E3%83%A1%E3%83%BC%E3%83%AB%0A%E2%98%90%20%E9%9B%BB%E8%A9%B1%0A%E2%98%90%20%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E4%BC%9A%E8%AD%B0%EF%BC%88Zoom%E7%AD%89%EF%BC%89" class="contact-cta">
+                無料相談を申し込む
+            </a>
+        </div>
+    </div>
+    <!-- モーダルウィンドウ -->
+    <div id="planModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle">プラン詳細</h2>
+                <span class="plan-tag" id="modalTag">詳細情報</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-price">
+                    <div class="price" id="modalPrice">-</div>
+                    <div class="period" id="modalPeriod">-</div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>このプランに含まれるサービス</h3>
+                    <ul class="modal-features" id="modalFeatures">
+                        <!-- 動的に追加 -->
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>こんな方におすすめ</h3>
+                    <p id="modalRecommend">-</p>
+                </div>
+                
+                <div class="modal-cta">
+                    <a href="" id="modalCTA" class="btn-contact">お問い合わせ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // メールテンプレートを生成
+        function generateEmailTemplate(planName) {
+            const template = `
+【お問い合わせプラン】
+${planName}
+
+【会社情報】
+会社名：
+ご担当者名：
+メールアドレス：
+電話番号：
+
+【現在の状況】
+□ すでに海外展開をしている
+□ これから海外展開を検討している
+□ 情報収集段階
+
+【主な取扱商品】
+（例：日本酒、焼酎、食品、工芸品など）
+
+
+【ターゲット市場】
+□ アジア（中国、韓国、台湾など）
+□ 北米（アメリカ、カナダ）
+□ ヨーロッパ
+□ 中東
+□ その他（　　　　　）
+
+【ご相談内容】
+（お困りごとやご質問などを自由にご記入ください）
+
+
+
+【希望連絡方法】
+□ メール
+□ 電話
+□ オンライン会議（Zoom等）
+
+【希望連絡時間帯】
+□ 午前中（9:00-12:00）
+□ 午後（13:00-17:00）
+□ 夕方以降（17:00-19:00）
+
+---
+※このメールはテロワールハブの料金詳細ページから送信されました。
+※2営業日以内にご連絡させていただきます。
+            `;
+            return encodeURIComponent(template.trim());
+        }
+
+        // プラン詳細データ
+        const planDetails = {
+            starter: {
+                title: 'お試しプラン',
+                tag: '無料で始める',
+                price: '無料',
+                period: '初期費用・月額費用なし',
+                features: [
+                    '英語カタログ制作（1商品）',
+                    'テロワールハブサイトへの掲載',
+                    '海外バイヤー向け表示対応',
+                    '基本的な商品情報の翻訳',
+                    '問い合わせ対応サポート',
+                    'カタログページのQRコード発行',
+                    '簡易アクセス解析'
+                ],
+                recommend: '海外展開を検討中で、まずは小規模に試してみたい企業様。初期投資なしで海外バイヤーへのアプローチを開始できます。',
+                emailSubject: '【テロワールハブ】お試しプラン（無料）のご相談'
+            },
+            growth: {
+                title: '成長プラン',
+                tag: '★ 人気プラン',
+                price: '20万円',
+                period: '月額',
+                features: [
+                    '英語カタログ制作（10商品）',
+                    '広告効果測定・分析レポート',
+                    'ターゲティング設定の最適化',
+                    '競合分析レポート（月1回）',
+                    '月次戦略ミーティング',
+                    '英語での顧客対応代行',
+                    'Instagram/Facebook広告運用',
+                    'メール問い合わせの翻訳サポート'
+                ],
+                recommend: '本格的に海外市場を開拓したい企業様。継続的な広告運用とサポートで、着実な成長を実現します。',
+                emailSubject: '【テロワールハブ】成長プラン（月額20万円）のご相談'
+            },
+            brand: {
+                title: 'ブランド拡大プラン',
+                tag: '限定特価 40%OFF',
+                price: '30万円',
+                period: '月額（通常50万円）',
+                features: [
+                    '英語カタログ制作（20商品）',
+                    '多言語対応サイト制作',
+                    '海外決済システムの導入',
+                    'SEO最適化（各国対応）',
+                    'レスポンシブデザイン',
+                    'CMS導入と操作研修',
+                    'セキュリティ（SSL）対応',
+                    'アクセス解析ツール設定',
+                    '全プラットフォーム広告運用',
+                    '月2回の戦略ミーティング'
+                ],
+                recommend: '自社ブランドを海外で本格展開したい企業様。包括的なサポートで、グローバルブランドとしての地位確立を支援します。',
+                emailSubject: '【テロワールハブ】ブランド拡大プラン（特別価格30万円）のご相談'
+            }
+        };
+        
+        // モーダルを表示
+        function showPlanDetails(planType) {
+            const modal = document.getElementById('planModal');
+            const plan = planDetails[planType];
+            
+            if (!plan) return;
+            
+            // モーダル内容を更新
+            document.getElementById('modalTitle').textContent = plan.title;
+            document.getElementById('modalTag').textContent = plan.tag;
+            document.getElementById('modalPrice').textContent = plan.price;
+            document.getElementById('modalPeriod').textContent = plan.period;
+            document.getElementById('modalRecommend').textContent = plan.recommend;
+            
+            // メールリンクを生成
+            const emailTemplate = generateEmailTemplate(plan.title);
+            const mailtoLink = `mailto:fomus.official@gmail.com?subject=${encodeURIComponent(plan.emailSubject)}&body=${emailTemplate}`;
+            document.getElementById('modalCTA').href = mailtoLink;
+            
+            // 機能リストを更新
+            const featuresList = document.getElementById('modalFeatures');
+            featuresList.innerHTML = '';
+            plan.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+            
+            // モーダルを表示
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // モーダルを閉じる
+        function closeModal() {
+            const modal = document.getElementById('planModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // モーダル外クリックで閉じる
+        window.onclick = function(event) {
+            const modal = document.getElementById('planModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        // ESCキーで閉じる
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
