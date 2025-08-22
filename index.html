@@ -896,19 +896,6 @@
                 0 1px 0 rgba(255, 255, 255, 0.9) inset;
         }
         
-        .flow-step::after {
-            content: "→";
-            position: absolute;
-            right: -12px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.2rem;
-            color: #4db6ac;
-        }
-        
-        .flow-step:last-child::after {
-            display: none;
-        }
         
         .step-number {
             background: linear-gradient(135deg, #4db6ac, #00695c);
@@ -1468,21 +1455,6 @@
                 transform: scale(0.98);
             }
             
-            .flow-step::after {
-                content: "↓";
-                position: absolute;
-                bottom: -28px;
-                left: 50%;
-                transform: translateX(-50%);
-                font-size: 1.8rem;
-                color: #4db6ac;
-                display: block;
-                filter: drop-shadow(0 2px 4px rgba(77, 182, 172, 0.3));
-            }
-            
-            .flow-step:last-child::after {
-                display: none;
-            }
             
             .step-number {
                 width: 44px;
