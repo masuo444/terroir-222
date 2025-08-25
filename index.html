@@ -2,1896 +2,1569 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>テロワールハブ - 日本のものづくりを世界へ | FOMUS</title>
-    <meta name="description" content="日本の酒造・食品・工芸メーカー向け越境DXプラットフォーム。英語カタログ無料制作、Instagram広告運用10万円〜。海外展開をシンプルにサポート。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#FF7043">
+    <title>TerroirHub | 日本のものづくりを世界へ（IT補助金対象）</title>
+    <meta name="description" content="無料の多言語カタログから始める、越境DXプラットフォーム。補助金を活用して、最短1ヶ月で海外展開を。">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="TerroirHub | 日本のものづくりを世界へ">
+    <meta property="og:description" content="無料の多言語カタログから始める、越境DXプラットフォーム。補助金を活用して、最短1ヶ月で海外展開を。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="TerroirHub">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TerroirHub | 日本のものづくりを世界へ">
+    <meta name="twitter:description" content="無料の多言語カタログから始める、越境DXプラットフォーム。補助金を活用して、最短1ヶ月で海外展開を。">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --orange-main: #FF7043;
+            --orange-dark: #E64A19;
+            --orange-light: #FFAB91;
+            --orange-pale: #FFF3E0;
+            --elegant-white: #FEFEFE;
+            --soft-gray: #F8F9FA;
+            --charcoal: #2C3E50;
+            --gold: #FFB300;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--elegant-white) 0%, var(--orange-pale) 100%);
+            color: var(--charcoal);
             line-height: 1.6;
-            color: #0f0f0f;
-            background: 
-                conic-gradient(from 180deg at 50% 50%, 
-                    rgba(77, 182, 172, 0.03) 0deg, 
-                    rgba(255, 255, 255, 0.08) 60deg, 
-                    rgba(0, 105, 92, 0.02) 120deg, 
-                    rgba(255, 255, 255, 0.08) 180deg, 
-                    rgba(77, 182, 172, 0.03) 240deg, 
-                    rgba(255, 255, 255, 0.08) 300deg, 
-                    rgba(77, 182, 172, 0.03) 360deg
-                ),
-                linear-gradient(135deg, #ffffff 0%, #fafffe 30%, #ffffff 100%);
-            background-attachment: fixed;
-            font-weight: 400;
-            letter-spacing: -0.015em;
-            overflow-x: hidden;
         }
         
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px;
+        .orange-gradient {
+            background: linear-gradient(135deg, var(--orange-main) 0%, var(--orange-dark) 50%, #BF360C 100%);
         }
         
-        @media (min-width: 1200px) {
-            .container {
-                padding: 60px;
-            }
+        .orange-card {
+            background: var(--elegant-white);
+            border: 1px solid var(--orange-light);
+            box-shadow: 0 10px 40px rgba(255, 112, 67, 0.15);
+            transition: all 0.3s ease;
         }
         
-        .header {
-            margin: -30px -30px 120px -30px;
-            padding: 80px 60px;
-            background: 
-                linear-gradient(135deg, 
-                    rgba(0, 61, 59, 0.98) 0%, 
-                    rgba(0, 89, 86, 0.95) 30%, 
-                    rgba(0, 77, 74, 0.98) 70%, 
-                    rgba(0, 105, 92, 0.96) 100%
-                ),
-                radial-gradient(circle at 30% 70%, rgba(77, 182, 172, 0.15) 0%, transparent 60%),
-                radial-gradient(circle at 80% 20%, rgba(128, 203, 196, 0.1) 0%, transparent 50%);
-            color: #ffffff;
-            position: relative;
-            overflow: hidden;
-            border-radius: 0 0 60px 60px;
-            box-shadow: 
-                0 32px 80px rgba(0, 61, 59, 0.25),
-                0 8px 32px rgba(0, 61, 59, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        .orange-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(255, 112, 67, 0.25);
         }
         
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
-                text-align: center;
-            }
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-            animation: float 20s infinite linear;
-        }
-        
-        @keyframes float {
-            0% { transform: translateX(-50px) translateY(-50px); }
-            100% { transform: translateX(-50px) translateY(-80px); }
-        }
-        
-        .hero-content h1 {
+        .elegant-title {
             font-family: 'Playfair Display', serif;
-            font-size: 3.8rem;
-            margin-bottom: 24px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            position: relative;
-            z-index: 2;
-            line-height: 1.1;
-            background: linear-gradient(135deg, #ffffff 0%, #e0fffa 50%, #ffffff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            font-weight: 600;
+            color: var(--charcoal);
+            letter-spacing: -0.02em;
         }
         
-        .hero-content .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 32px;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            position: relative;
-            z-index: 2;
-            line-height: 1.4;
-        }
-        
-        .hero-features {
-            list-style: none;
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-features li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 16px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            opacity: 0.85;
-        }
-        
-        .hero-features li::before {
-            content: "✓";
-            color: #4db6ac;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-right: 12px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: rgba(77, 182, 172, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .hero-cta {
-            display: flex;
-            gap: 16px;
-            margin-top: 40px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-cta .btn {
+        .orange-button {
+            background: linear-gradient(135deg, var(--orange-main) 0%, var(--orange-dark) 100%);
+            color: white;
+            border: none;
             padding: 16px 32px;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 112, 67, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
         
-        .hero-cta .btn-primary {
-            background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
-            color: #00695c;
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
-        }
-        
-        .hero-cta .btn-primary:hover {
-            background: #ffffff;
-            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.4);
+        .orange-button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 112, 67, 0.4);
         }
         
-        .hero-cta .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-        
-        .hero-cta .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-2px);
-        }
-        
-        .hero-visual {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 32px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-        }
-        
-        .hero-card-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
-            display: block;
-        }
-        
-        .hero-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+        .luxury-accent {
+            color: var(--gold);
             font-weight: 600;
         }
         
-        .hero-card p {
-            opacity: 0.8;
-            font-size: 0.9rem;
-            line-height: 1.5;
+        .elegant-section {
+            padding: 80px 0;
+            position: relative;
         }
         
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.8rem;
-                text-align: center;
-            }
-            
-            .hero-cta {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 12px;
-                max-width: 320px;
-                margin: 0 auto;
-            }
-            
-            .hero-cta .btn {
-                width: 100%;
-                padding: 16px 24px;
-                font-size: 1rem;
-                border-radius: 50px;
-                font-weight: 600;
-            }
-            
-            .hero-cta .btn-primary {
-                box-shadow: 
-                    0 8px 24px rgba(255, 255, 255, 0.25),
-                    0 3px 8px rgba(255, 255, 255, 0.15);
-            }
-            
-            .hero-cta .btn-secondary {
-                background: rgba(255, 255, 255, 0.12);
-                backdrop-filter: blur(10px);
-            }
-            
+        .elegant-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--orange-main), transparent);
+            transform: translateX(-50%);
         }
         
-        
-        .section {
-            margin: 100px 0;
-            padding: 80px;
-            background: 
-                linear-gradient(145deg, rgba(255, 255, 255, 0.85) 0%, rgba(248, 255, 253, 0.9) 100%);
-            backdrop-filter: blur(30px) saturate(1.8);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 40px;
+        .price-tag {
+            background: linear-gradient(135deg, var(--elegant-white) 0%, var(--tiffany-pale) 100%);
+            border: 2px solid var(--orange-light);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
             position: relative;
             overflow: hidden;
-            box-shadow: 
-                0 20px 60px rgba(0, 105, 92, 0.08),
-                0 8px 24px rgba(0, 61, 59, 0.04),
-                inset 0 1px 0 rgba(255, 255, 255, 0.9),
-                inset 0 -1px 0 rgba(77, 182, 172, 0.1);
         }
         
-        .pricing.section {
-            margin: 60px 0;
-            padding: 60px;
-        }
-        
-        .section::before {
+        .price-tag::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(77, 182, 172, 0.02) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(128, 203, 196, 0.015) 0%, transparent 40%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #c4bfb8, transparent);
-        }
-        
-        .section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            margin-bottom: 48px;
-            color: #0a0a0a;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            line-height: 1.2;
-        }
-        
-        .pricing h2 {
-            font-size: 2.8rem;
-            margin-bottom: 36px;
-        }
-        
-        .section h2::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.95);
-            width: 120%;
-            height: 120%;
-            background: 
-                radial-gradient(ellipse, rgba(77, 182, 172, 0.03) 0%, transparent 70%);
-            z-index: -1;
-            border-radius: 50%;
-        }
-        
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -16px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, #4db6ac 0%, #80cbc4 50%, #4db6ac 100%);
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(77, 182, 172, 0.3);
+            background: linear-gradient(90deg, var(--orange-main), var(--orange-dark), var(--orange-main));
         }
         
-        .section-icon {
-            display: block;
-            text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 24px;
-            opacity: 0.8;
-            filter: drop-shadow(0 4px 8px rgba(77, 182, 172, 0.2));
-            transform: translateY(-8px);
-        }
-        
-        .problems {
-            background: linear-gradient(135deg, rgba(240, 255, 254, 0.9) 0%, rgba(230, 255, 250, 0.9) 100%);
-        }
-        
-        .problems.section {
-            margin: 60px 0;
-            padding: 50px;
-        }
-        
-        .problems h2 {
-            color: #00695c;
-            margin-bottom: 32px;
-        }
-        
-        .solutions {
-            background: linear-gradient(135deg, rgba(224, 247, 250, 0.9) 0%, rgba(178, 223, 219, 0.9) 100%);
-        }
-        
-        .solutions.section {
-            margin: 60px 0;
-            padding: 50px;
-        }
-        
-        .solutions h2 {
-            color: #004d4a;
-            margin-bottom: 32px;
-        }
-        
-        .pricing {
-            background: linear-gradient(135deg, rgba(230, 255, 250, 0.9) 0%, rgba(178, 223, 219, 0.9) 100%);
-        }
-        
-        .pricing h2 {
-            color: #004d4a;
-        }
-        
-        .benefits {
-            background: linear-gradient(135deg, rgba(240, 255, 254, 0.9) 0%, rgba(224, 247, 250, 0.9) 100%);
-        }
-        
-        .benefits.section {
-            margin: 60px 0;
-            padding: 50px;
-        }
-        
-        .benefits h2 {
-            color: #00695c;
-            margin-bottom: 32px;
-        }
-        
-        .problem-list {
-            list-style: none;
-            margin: 24px 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-        }
-        
-        @media (max-width: 768px) {
-            .problem-list {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-        
-        .problem-list li {
-            margin: 24px 0;
-            padding: 32px;
-            background: 
-                linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 255, 253, 0.98) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            position: relative;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 400;
-            letter-spacing: -0.015em;
-            line-height: 1.6;
-            border-radius: 24px;
-            font-size: 1.1rem;
-            backdrop-filter: blur(20px);
-            box-shadow: 
-                0 8px 32px rgba(0, 105, 92, 0.06),
-                0 4px 12px rgba(0, 61, 59, 0.04),
-                inset 0 1px 0 rgba(255, 255, 255, 0.9),
-                inset 0 -1px 0 rgba(77, 182, 172, 0.05);
-        }
-        
-        .problem-list li::before {
-            content: '';
+        .premium-badge {
             position: absolute;
-            top: -1px;
-            left: -1px;
-            right: -1px;
-            bottom: -1px;
-            border-radius: 32px;
-            background: linear-gradient(145deg, 
-                rgba(255, 255, 255, 0.8) 0%, 
-                rgba(77, 182, 172, 0.1) 50%, 
-                rgba(255, 255, 255, 0.8) 100%
-            );
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        .problem-list li:hover::before {
-            opacity: 1;
-        }
-        
-        .problem-list li:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            border-color: rgba(200, 195, 188, 0.4);
-        }
-        
-        .problem-list li::before {
-            content: '○';
-            position: absolute;
-            left: -10px;
-            top: 30px;
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(135deg, #d4af37, #f4e4bc);
-            border-radius: 50%;
-            color: transparent;
-        }
-        
-        .solution-list {
-            list-style: none;
-            margin: 24px 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-        }
-        
-        @media (max-width: 768px) {
-            .solution-list {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-        }
-        
-        .solution-list li {
-            margin: 0;
-            padding: 40px;
-            background: 
-                linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 255, 253, 0.98) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            border-radius: 28px;
-            backdrop-filter: blur(20px);
-            display: flex;
-            flex-direction: column;
-            box-shadow: 
-                0 12px 36px rgba(0, 105, 92, 0.08),
-                0 6px 20px rgba(0, 61, 59, 0.04),
-                inset 0 1px 0 rgba(255, 255, 255, 0.95),
-                inset 0 -1px 0 rgba(77, 182, 172, 0.08);
-        }
-        
-        .solution-list li::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 36px;
-            background: 
-                radial-gradient(circle at 80% 20%, rgba(77, 182, 172, 0.03) 0%, transparent 60%),
-                radial-gradient(circle at 20% 80%, rgba(128, 203, 196, 0.02) 0%, transparent 50%);
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        .solution-list li:hover::after {
-            opacity: 1;
-        }
-        
-        .solution-list li:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-            border-color: rgba(200, 195, 188, 0.4);
-        }
-        
-        .solution-number {
-            display: inline-block;
-            background: 
-                linear-gradient(135deg, #00695c 0%, #4db6ac 50%, #80cbc4 100%);
-            color: #ffffff;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 60px;
-            font-weight: 700;
-            margin-right: 20px;
-            margin-bottom: 16px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1.4rem;
-            letter-spacing: -0.02em;
-            position: relative;
-            flex-shrink: 0;
-            box-shadow: 
-                0 8px 24px rgba(0, 105, 92, 0.3),
-                0 4px 12px rgba(77, 182, 172, 0.2),
-                inset 0 2px 0 rgba(255, 255, 255, 0.15),
-                inset 0 -2px 0 rgba(0, 61, 59, 0.2);
-        }
-        
-        .solution-number::before {
-            content: '';
-            position: absolute;
-            top: -4px;
-            left: -4px;
-            right: -4px;
-            bottom: -4px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, 
-                rgba(77, 182, 172, 0.3) 0%, 
-                transparent 50%, 
-                rgba(128, 203, 196, 0.2) 100%
-            );
-            z-index: -1;
-            opacity: 0;
-            transition: all 0.5s ease;
-        }
-        
-        .solution-list li:hover .solution-number::before {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-        
-        .solution-number::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #d4af37, #f4e4bc);
-            border-radius: 50%;
-            z-index: -1;
-        }
-        
-        .solution-title {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            color: #0a0a0a;
-            letter-spacing: -0.02em;
-            line-height: 1.3;
-        }
-        
-        .solution-description {
-            color: #4a4a4a;
-            font-weight: 300;
-            line-height: 1.8;
-            letter-spacing: 0.2px;
-        }
-        
-        .price-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 20px;
-            margin: 24px 0;
-            align-items: stretch;
-        }
-        
-        @media (max-width: 768px) {
-            .price-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-        
-        .price-item {
-            background: 
-                linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 255, 253, 1) 100%);
-            padding: 28px;
-            border: 2px solid rgba(0, 105, 92, 0.15);
+            top: -10px;
+            right: 20px;
+            background: var(--gold);
+            color: white;
+            padding: 8px 20px;
             border-radius: 20px;
-            text-align: center;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            backdrop-filter: blur(20px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 240px;
-            box-shadow: 
-                0 12px 40px rgba(0, 105, 92, 0.12),
-                0 4px 12px rgba(0, 61, 59, 0.08),
-                inset 0 1px 0 rgba(255, 255, 255, 1),
-                inset 0 -1px 0 rgba(77, 182, 172, 0.1);
-        }
-        
-        .price-item::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            right: -1px;
-            bottom: -1px;
-            border-radius: 28px;
-            background: linear-gradient(145deg, 
-                rgba(77, 182, 172, 0.2) 0%, 
-                rgba(255, 255, 255, 0.3) 50%, 
-                rgba(128, 203, 196, 0.15) 100%
-            );
-            z-index: -1;
-            opacity: 0;
-            transition: all 0.5s ease;
-        }
-        
-        .price-item:hover::before {
-            opacity: 1;
-        }
-        
-        .price-item:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: rgba(0, 105, 92, 0.25);
-            box-shadow: 
-                0 20px 60px rgba(0, 105, 92, 0.16),
-                0 8px 24px rgba(0, 61, 59, 0.12),
-                inset 0 1px 0 rgba(255, 255, 255, 1),
-                inset 0 -1px 0 rgba(77, 182, 172, 0.15);
-        }
-        
-        .price-item:hover .price-amount {
-            color: #00695c;
-            transform: scale(1.05);
-        }
-        
-        .price-item:hover .price-title {
-            color: #00695c;
-        }
-        
-        .price-title {
-            font-family: 'Playfair Display', serif;
+            font-size: 12px;
             font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            color: #001a19;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-        
-        .price-amount {
-            font-family: 'Inter', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #003d3b;
-            margin-bottom: 12px;
-            letter-spacing: -0.02em;
-            text-shadow: 0 2px 4px rgba(0, 61, 59, 0.1);
-        }
-        
-        .price-note {
-            font-size: 0.85rem;
-            color: #2d4a49;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-            line-height: 1.3;
-            margin-top: auto;
-        }
-        
-        .benefit-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin: 24px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .benefit-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-        
-        .benefit-item {
-            background: 
-                linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 255, 253, 0.9) 100%);
-            padding: 28px;
-            border-radius: 20px;
-            border: 1px solid rgba(77, 182, 172, 0.1);
-            box-shadow: 
-                0 6px 24px rgba(0, 105, 92, 0.08),
-                0 1px 0 rgba(255, 255, 255, 0.8) inset;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .benefit-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 
-                0 12px 48px rgba(0, 105, 92, 0.12),
-                0 1px 0 rgba(255, 255, 255, 0.9) inset;
-        }
-        
-        .benefit-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-        
-        .benefit-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #00695c;
-        }
-        
-        .categories {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin: 24px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .categories {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-        
-        .category-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background: 
-                linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 255, 253, 0.9) 100%);
-            padding: 24px 20px;
-            border-radius: 16px;
-            border: 1px solid rgba(77, 182, 172, 0.1);
-            box-shadow: 
-                0 6px 24px rgba(0, 105, 92, 0.08),
-                0 1px 0 rgba(255, 255, 255, 0.8) inset;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        @media (max-width: 768px) {
-            .category-item {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 16px;
-            }
-        }
-        
-        .category-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 
-                0 12px 48px rgba(0, 105, 92, 0.12),
-                0 1px 0 rgba(255, 255, 255, 0.9) inset;
-        }
-        
-        .category-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .category-icon {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-            filter: drop-shadow(0 2px 4px rgba(77, 182, 172, 0.3));
-        }
-        
-        .category-name {
-            font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 1.2rem;
-            color: #00695c;
-        }
-        
-        .category-examples {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.4;
-        }
-        
-        
-        .flow-steps {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-            margin: 24px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .flow-steps {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .flow-step {
-            background: 
-                linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 255, 253, 0.9) 100%);
-            padding: 20px;
-            border-radius: 16px;
-            border: 1px solid rgba(77, 182, 172, 0.1);
-            text-align: center;
-            box-shadow: 
-                0 6px 24px rgba(0, 105, 92, 0.08),
-                0 1px 0 rgba(255, 255, 255, 0.8) inset;
+            background: var(--elegant-white);
+            border: 1px solid var(--orange-light);
+            border-radius: 15px;
+            padding: 30px 25px;
             position: relative;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 20px;
         }
-        
-        .flow-step:hover {
-            transform: translateY(-4px);
-            box-shadow: 
-                0 12px 48px rgba(0, 105, 92, 0.12),
-                0 1px 0 rgba(255, 255, 255, 0.9) inset;
-        }
-        
         
         .step-number {
-            background: linear-gradient(135deg, #4db6ac, #00695c);
+            background: linear-gradient(135deg, var(--orange-main), var(--orange-dark));
             color: white;
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 12px;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            box-shadow: 
-                0 4px 16px rgba(77, 182, 172, 0.3),
-                0 2px 0 rgba(255, 255, 255, 0.1) inset;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(255, 112, 67, 0.3);
         }
         
-        .step-title {
-            font-weight: bold;
-            margin-bottom: 0;
-            font-size: 0.85rem;
-            line-height: 1.3;
+        .elegant-form {
+            background: var(--elegant-white);
+            border: 1px solid var(--orange-light);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 50px rgba(255, 112, 67, 0.1);
         }
         
-        .cta-section {
-            background: 
-                linear-gradient(135deg, 
-                    rgba(0, 61, 59, 0.98) 0%, 
-                    rgba(0, 89, 86, 0.95) 25%, 
-                    rgba(0, 77, 74, 0.98) 50%, 
-                    rgba(0, 105, 92, 0.96) 75%, 
-                    rgba(0, 61, 59, 0.98) 100%
-                ),
-                radial-gradient(circle at 30% 70%, rgba(77, 182, 172, 0.15) 0%, transparent 60%),
-                radial-gradient(circle at 80% 20%, rgba(128, 203, 196, 0.1) 0%, transparent 50%);
-            color: #ffffff;
-            padding: 120px 60px;
-            text-align: center;
-            margin: 120px -30px;
-            border-radius: 60px;
+        .elegant-input {
+            border: 2px solid var(--orange-light);
+            border-radius: 10px;
+            padding: 15px 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: var(--elegant-white);
+        }
+        
+        .elegant-input:focus {
+            border-color: var(--orange-main);
+            box-shadow: 0 0 0 4px rgba(255, 112, 67, 0.1);
+            outline: none;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--tiffany-pale) 0%, var(--elegant-white) 50%, var(--tiffany-pale) 100%);
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(10px);
-            box-shadow: 
-                0 40px 100px rgba(0, 61, 59, 0.3),
-                0 16px 40px rgba(0, 77, 74, 0.2),
-                inset 0 2px 0 rgba(255, 255, 255, 0.1),
-                inset 0 -2px 0 rgba(0, 61, 59, 0.3);
         }
         
-        .cta-section::before {
+        .hero-section::before {
             content: '';
             position: absolute;
             top: -50%;
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(212,175,55,0.1) 1px, transparent 1px);
-            background-size: 40px 40px;
-            animation: float 25s infinite linear;
+            background: radial-gradient(circle, rgba(255, 112, 67, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
         }
         
-        .cta-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 36px;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        @keyframes float {
+            0% { transform: rotate(0deg) translateY(0); }
+            100% { transform: rotate(360deg) translateY(-20px); }
         }
         
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 20px 48px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: none;
-            font-size: 1.1rem;
-            letter-spacing: -0.01em;
-            border-radius: 12px;
-            position: relative;
-            overflow: hidden;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: all 0.5s ease;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #4db6ac, #80cbc4);
-            color: #ffffff;
-            border: 1px solid rgba(77, 182, 172, 0.3);
-            box-shadow: 
-                0 8px 24px rgba(77, 182, 172, 0.3),
-                0 2px 0 rgba(255, 255, 255, 0.1) inset;
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #00695c, #4db6ac);
-            transform: translateY(-4px);
-            box-shadow: 
-                0 12px 36px rgba(77, 182, 172, 0.4),
-                0 2px 0 rgba(255, 255, 255, 0.15) inset;
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #f5f2ed;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-        
-        .section-cta {
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        .btn-detail {
-            display: inline-block;
-            padding: 16px 40px;
-            background: linear-gradient(135deg, #00695c 0%, #4db6ac 100%);
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.02em;
-            border: 2px solid rgba(77, 182, 172, 0.3);
-            box-shadow: 
-                0 8px 24px rgba(0, 105, 92, 0.25),
-                0 2px 0 rgba(255, 255, 255, 0.1) inset;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-detail::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .btn-detail:hover {
-            background: linear-gradient(135deg, #004d47 0%, #00695c 100%);
-            transform: translateY(-3px);
-            box-shadow: 
-                0 12px 32px rgba(0, 105, 92, 0.35),
-                0 2px 0 rgba(255, 255, 255, 0.15) inset;
-        }
-        
-        .btn-detail:hover::before {
-            left: 100%;
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 60px 40px;
-            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-            color: #f5f2ed;
-            margin-top: 80px;
+        .luxury-footer {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #34495e 100%);
+            color: var(--elegant-white);
             position: relative;
         }
         
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .footer-section {
-            text-align: left;
-        }
-        
-        .footer-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #4db6ac;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .footer-link a {
-            color: #f5f2ed;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-link a:hover {
-            color: #4db6ac;
-        }
-        
-        .footer::before {
+        .luxury-footer::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, #c4bfb8, transparent);
+            background: linear-gradient(90deg, transparent, var(--orange-main), transparent);
         }
         
-        .contact-info {
-            margin-bottom: 20px;
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
         }
         
-        .contact-info div {
-            margin: 10px 0;
+        .modal-content {
+            background: var(--elegant-white);
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(255, 112, 67, 0.3);
+            position: relative;
         }
         
-        .highlight-box {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            padding: 24px;
-            border-radius: 16px;
-            margin: 32px 0 0 0;
-            text-align: center;
+        .modal-header {
+            background: linear-gradient(135deg, var(--orange-main), var(--orange-dark));
+            color: white;
+            padding: 20px 30px;
+            border-radius: 20px 20px 0 0;
+            position: relative;
         }
         
-        .highlight-text {
-            font-size: 1.2rem;
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 28px;
             font-weight: bold;
-            color: #856404;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
         
-        /* 最高レベルのモバイル対応UI */
-        @media (max-width: 768px) {
-            body {
-                font-size: 16px;
-                line-height: 1.8;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
-            
+        .close:hover {
+            color: var(--gold);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .modal-body {
+            padding: 30px;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+        
+        .modal-body h3 {
+            color: var(--orange-dark);
+            font-weight: 600;
+            margin: 20px 0 10px 0;
+        }
+        
+        .modal-body p {
+            margin-bottom: 15px;
+        }
+        
+        /* iPhone 16 最適化 (393px x 852px) */
+        @media (max-width: 480px) {
             .container {
                 padding: 16px;
-                max-width: 100%;
-                overflow-x: hidden;
+                max-width: 393px;
+                margin: 0 auto;
             }
             
-            .header {
-                padding: 60px 20px 40px;
-                margin: -16px -16px 40px -16px;
-                border-radius: 0 0 32px 32px;
-                box-shadow: 
-                    0 20px 60px rgba(0, 61, 59, 0.2),
-                    0 8px 24px rgba(0, 61, 59, 0.12);
+            .hero-section {
+                padding: 60px 16px;
             }
             
-            .hero-content h1 {
-                font-size: 2.8rem;
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.1;
                 margin-bottom: 20px;
-                line-height: 1.15;
-                text-align: center;
-                background: linear-gradient(135deg, #ffffff 0%, #e0fffa 50%, #ffffff 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
             }
             
-            .hero-content .subtitle {
-                font-size: 1.1rem;
-                font-weight: 500;
-                margin-bottom: 24px;
-                text-align: center;
-                line-height: 1.5;
-                opacity: 0.95;
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 28px;
+                padding: 0 10px;
             }
             
-            .hero-features {
-                text-align: left;
-                max-width: 280px;
-                margin: 0 auto 32px;
+            .orange-button {
+                padding: 14px 28px;
+                font-size: 13px;
+                width: auto;
+                display: inline-block;
             }
             
-            .hero-features li {
-                font-size: 0.95rem;
-                margin-bottom: 14px;
-                padding-left: 28px;
-                position: relative;
+            .elegant-section {
+                padding: 50px 0;
+                margin: 40px 0;
             }
             
-            .hero-features li::before {
-                position: absolute;
-                left: 0;
-            }
-            
-            .section {
-                margin: 32px 0;
-                padding: 36px 24px;
-                border-radius: 24px;
-                box-shadow: 
-                    0 16px 48px rgba(0, 105, 92, 0.1),
-                    0 4px 16px rgba(0, 61, 59, 0.06);
-            }
-            
+            .elegant-section h2,
             .section h2 {
                 font-size: 2.2rem;
                 margin-bottom: 32px;
-                text-align: center;
-                line-height: 1.25;
+                padding: 0 10px;
             }
             
-            .section-icon {
-                font-size: 3.5rem;
-                margin-bottom: 20px;
-                text-align: center;
-                display: block;
-                filter: drop-shadow(0 4px 12px rgba(77, 182, 172, 0.25));
-            }
-            
-            
-            .problem-list li {
-                padding: 28px 24px;
+            .orange-card {
+                padding: 24px 16px;
                 margin: 16px 0;
-                font-size: 1.05rem;
-                border-radius: 20px;
-                box-shadow: 
-                    0 8px 24px rgba(0, 105, 92, 0.08),
-                    0 2px 8px rgba(0, 61, 59, 0.04);
-                backdrop-filter: blur(20px);
-                line-height: 1.65;
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                border-radius: 16px;
             }
             
-            .problem-list li:active {
-                transform: scale(0.98);
-                box-shadow: 
-                    0 4px 12px rgba(0, 105, 92, 0.06),
-                    0 1px 4px rgba(0, 61, 59, 0.03);
-            }
-            
-            .solution-list li {
-                padding: 32px 24px;
-                margin: 20px 0;
-                border-radius: 24px;
-                box-shadow: 
-                    0 12px 32px rgba(0, 105, 92, 0.1),
-                    0 4px 12px rgba(0, 61, 59, 0.05);
-                backdrop-filter: blur(20px);
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            
-            .solution-list li:active {
-                transform: scale(0.98);
-            }
-            
-            .solution-number {
-                width: 52px;
-                height: 52px;
-                line-height: 52px;
-                font-size: 1.3rem;
-                margin: 0 auto 20px;
-                box-shadow: 
-                    0 6px 20px rgba(0, 105, 92, 0.25),
-                    0 2px 8px rgba(77, 182, 172, 0.15);
-            }
-            
-            .solution-title {
-                font-size: 1.5rem;
-                margin-bottom: 16px;
-                text-align: center;
-                line-height: 1.3;
-            }
-            
-            .solution-description {
+            .orange-card p {
                 font-size: 1rem;
-                line-height: 1.65;
-                text-align: center;
-                color: #555;
+                line-height: 1.5;
             }
             
-            .price-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .price-tag {
+                padding: 24px 16px;
+                margin: 16px 0;
+                border-radius: 16px;
             }
             
-            .price-item {
-                padding: 32px 24px;
-                border-radius: 24px;
-                box-shadow: 
-                    0 12px 36px rgba(0, 105, 92, 0.14),
-                    0 4px 12px rgba(0, 61, 59, 0.08);
-                backdrop-filter: blur(20px);
-                min-height: 200px;
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            
-            .price-item:active {
-                transform: scale(0.98);
-            }
-            
-            .price-title {
-                font-size: 1.3rem;
-                margin-bottom: 16px;
-                line-height: 1.3;
-            }
-            
-            .price-amount {
+            .price-tag .text-4xl {
                 font-size: 2.8rem;
-                margin-bottom: 16px;
-                font-weight: 800;
-                background: linear-gradient(135deg, #00695c 0%, #4db6ac 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
+                margin-bottom: 8px;
             }
             
-            .price-note {
-                font-size: 0.95rem;
-                line-height: 1.4;
+            .premium-badge {
+                top: -8px;
+                right: 16px;
+                padding: 6px 16px;
+                font-size: 11px;
             }
             
-            .benefit-grid {
+            .elegant-form {
+                padding: 24px 16px;
+                border-radius: 16px;
+                margin: 16px 0;
+            }
+            
+            .elegant-input {
+                padding: 12px 16px;
+                font-size: 16px; /* iOS zoom防止 */
+                border-radius: 8px;
+            }
+            
+            .form-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .benefit-item {
-                padding: 28px 24px;
-                border-radius: 20px;
-                box-shadow: 
-                    0 8px 24px rgba(0, 105, 92, 0.1),
-                    0 2px 8px rgba(0, 61, 59, 0.05);
-                backdrop-filter: blur(20px);
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            
-            .benefit-item:active {
-                transform: scale(0.98);
-            }
-            
-            .benefit-icon {
-                font-size: 3rem;
-                margin-bottom: 16px;
-                display: block;
-                text-align: center;
-                filter: drop-shadow(0 4px 8px rgba(77, 182, 172, 0.2));
-            }
-            
-            .benefit-title {
-                font-size: 1.25rem;
-                margin-bottom: 14px;
-                text-align: center;
-                line-height: 1.3;
-            }
-            
-            .benefit-item div:last-child {
-                font-size: 1rem;
-                line-height: 1.6;
-                text-align: center;
-                color: #555;
-            }
-            
-            .categories {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .category-item {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 32px 24px;
-                text-align: center;
-                border-radius: 24px;
-                box-shadow: 
-                    0 10px 30px rgba(0, 105, 92, 0.1),
-                    0 3px 10px rgba(0, 61, 59, 0.05);
-                backdrop-filter: blur(20px);
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            
-            .category-item:active {
-                transform: scale(0.98);
-            }
-            
-            .category-icon {
-                font-size: 3.5rem;
-                margin-bottom: 16px;
-                filter: drop-shadow(0 4px 8px rgba(77, 182, 172, 0.2));
-            }
-            
-            .category-name {
-                font-size: 1.4rem;
-                margin-bottom: 12px;
-                font-weight: 600;
-                line-height: 1.3;
-            }
-            
-            .category-examples {
-                font-size: 0.95rem;
-                margin-bottom: 20px;
-                color: #666;
-                line-height: 1.4;
-            }
-            
-            
-            .flow-steps {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .flow-step {
-                margin: 0;
-                padding: 28px 24px;
-                border-radius: 20px;
-                box-shadow: 
-                    0 8px 24px rgba(0, 105, 92, 0.1),
-                    0 2px 8px rgba(0, 61, 59, 0.05);
-                backdrop-filter: blur(20px);
-                position: relative;
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            
-            .flow-step:active {
-                transform: scale(0.98);
-            }
-            
-            
-            .step-number {
-                width: 44px;
-                height: 44px;
-                margin-bottom: 16px;
-                background: linear-gradient(135deg, #4db6ac, #00695c);
-                box-shadow: 
-                    0 4px 12px rgba(77, 182, 172, 0.3),
-                    0 2px 4px rgba(0, 105, 92, 0.2);
-                font-size: 1rem;
-            }
-            
-            .step-title {
-                font-size: 1.1rem;
-                font-weight: 600;
-                line-height: 1.4;
-                color: #1a1a1a;
+                gap: 16px;
             }
             
             .cta-section {
-                padding: 60px 24px;
-                margin: 48px -16px;
-                border-radius: 32px;
-                box-shadow: 
-                    0 24px 64px rgba(0, 61, 59, 0.25),
-                    0 8px 24px rgba(0, 77, 74, 0.15);
+                padding: 50px 16px;
+                margin: 40px -16px;
+                border-radius: 24px;
             }
             
             .cta-title {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
                 margin-bottom: 24px;
-                line-height: 1.25;
-                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                padding: 0 10px;
             }
             
-            .cta-section p {
-                font-size: 1.1rem;
-                margin-bottom: 32px;
+            /* モーダルのモバイル最適化 */
+            .modal-content {
+                width: 95%;
+                max-width: 360px;
+                margin: 10% auto;
+                max-height: 70vh;
+            }
+            
+            .modal-header {
+                padding: 16px 20px;
+                border-radius: 16px 16px 0 0;
+            }
+            
+            .modal-title {
+                font-size: 1.3rem;
+            }
+            
+            .modal-body {
+                padding: 20px 16px;
+                font-size: 14px;
                 line-height: 1.6;
-                opacity: 0.95;
             }
             
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
-                align-items: stretch;
+            .modal-body h3 {
+                font-size: 1.1rem;
+                margin: 16px 0 8px 0;
             }
             
-            .btn {
-                padding: 18px 32px;
-                font-size: 1.05rem;
-                border-radius: 50px;
-                text-align: center;
-                font-weight: 600;
-                box-shadow: 
-                    0 8px 24px rgba(77, 182, 172, 0.25),
-                    0 3px 8px rgba(0, 105, 92, 0.15);
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                width: 100%;
-                max-width: 320px;
-                margin: 0 auto;
-                display: block;
+            .close {
+                font-size: 24px;
+                right: 16px;
             }
             
-            .btn:active {
-                transform: scale(0.98);
+            /* フローセクション */
+            .flow-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
             
-            .highlight-box {
-                padding: 24px 20px;
-                margin: 28px 0;
-                border-radius: 20px;
-                box-shadow: 
-                    0 6px 20px rgba(255, 193, 7, 0.15),
-                    0 2px 8px rgba(255, 193, 7, 0.1);
+            .flow-pattern {
+                padding: 24px 16px;
+                border-radius: 16px;
             }
             
-            .highlight-text {
-                font-size: 1.15rem;
-                line-height: 1.5;
-                font-weight: 600;
+            .step-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+                margin-right: 12px;
             }
             
-            .footer {
-                padding: 48px 24px;
-                margin-top: 60px;
-                border-radius: 32px 32px 0 0;
-                box-shadow: 
-                    0 -8px 32px rgba(0, 0, 0, 0.08),
-                    0 -2px 8px rgba(0, 0, 0, 0.04);
+            .step-content h3 {
+                font-size: 0.95rem;
+                margin-bottom: 4px;
+            }
+            
+            .step-content p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+            
+            /* フッター */
+            .luxury-footer {
+                padding: 40px 16px;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 32px;
+                gap: 24px;
                 text-align: center;
             }
             
             .footer-section {
-                text-align: center;
+                text-align: center !important;
             }
             
             .footer-title {
-                justify-content: center;
+                font-size: 1.1rem;
+                margin-bottom: 12px;
             }
             
-            .contact-info {
-                text-align: center;
+            /* FAQセクション */
+            .faq-item {
+                border-radius: 12px;
+                margin-bottom: 12px;
             }
             
-            .footer-bottom {
-                flex-direction: column;
-                gap: 20px;
+            .faq-question {
+                padding: 16px 20px;
             }
             
-            .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
+            .faq-question h3 {
+                font-size: 0.95rem;
+                line-height: 1.4;
             }
             
-            .contact-info div {
+            .faq-answer {
+                padding: 0 20px 16px;
+                margin-left: 16px;
+                font-size: 0.9rem;
+            }
+            
+            /* 価格グリッド */
+            .price-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            /* ソリューショングリッド */
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .solution-item {
+                padding: 24px 20px;
+                border-radius: 16px;
+            }
+            
+            .solution-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+            
+            .solution-title {
+                font-size: 1.2rem;
+                margin-bottom: 8px;
+            }
+            
+            /* 問題リスト */
+            .problem-list {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .problem-list li {
+                padding: 24px 20px;
+                border-radius: 16px;
                 font-size: 1rem;
-                margin: 14px 0;
-                line-height: 1.5;
+                margin: 16px 0;
             }
         }
         
-        /* フッター追加スタイル */
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-            margin-bottom: 40px;
+        @media (max-width: 768px) and (min-width: 481px) {
+            .elegant-section {
+                padding: 60px 0;
+            }
+            
+            .price-tag {
+                padding: 30px 20px;
+            }
+            
+            .elegant-form {
+                padding: 30px 20px;
+            }
+            
+            .container {
+                padding: 24px;
+            }
         }
         
-        .company-info {
-            text-align: left;
-        }
-        
-        .company-name {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: #00695c;
-        }
-        
-        .company-details div {
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-        
-        .footer .contact-info {
-            text-align: right;
-            margin-bottom: 0;
-        }
-        
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(77, 182, 172, 0.1);
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .footer-links span {
-            font-size: 0.85rem;
-            color: #666;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links span:hover {
-            color: #00695c;
+        /* タッチデバイス用の最適化 */
+        @media (hover: none) and (pointer: coarse) {
+            .orange-button:hover,
+            .orange-card:hover,
+            .solution-item:hover {
+                transform: none;
+            }
+            
+            .orange-button:active {
+                transform: translateY(1px);
+            }
+            
+            .orange-card:active,
+            .solution-item:active {
+                transform: translateY(-2px);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- ヘッダー -->
-        <header class="header">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <h1>🏯 テロワールハブ</h1>
-                    <div class="subtitle">日本のものづくりを世界へ届ける、越境DXプラットフォーム</div>
-                    
-                    <ul class="hero-features">
-                        <li>多言語カタログ制作</li>
-                        <li>海外対応サイトの制作</li>
-                        <li>ターゲティング広告の実施</li>
-                        <li>海外のお客様とのマッチング</li>
+    <!-- Hero Section -->
+    <section class="hero-section elegant-section py-32 px-4">
+        <div class="container mx-auto max-w-6xl text-center relative z-10">
+            <h1 class="elegant-title text-5xl md:text-6xl mb-8">
+                日本のものづくりを、<span class="luxury-accent">世界の市場</span>へ。
+            </h1>
+            <p class="text-xl mb-12 max-w-4xl mx-auto leading-relaxed opacity-80">
+                無料の多言語カタログから始めて、AIチャットで販路を広げる。<br>
+                <span class="luxury-accent">TerroirHub</span>は、IT導入補助金対象の越境DXサービスです。
+            </p>
+            <button class="orange-button" onclick="scrollToForm()">
+                ✨ 無料でカタログを作る
+            </button>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="elegant-section px-4">
+        <div class="container mx-auto max-w-5xl text-center">
+            <h2 class="elegant-title text-4xl mb-6">
+                海外展開に挑戦したいけど<span class="luxury-accent">...</span>
+            </h2>
+            <p class="text-xl mb-16 opacity-70">
+                こんなお悩みありませんか？
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="orange-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-6">💎</div>
+                    <p class="font-medium text-lg">
+                        翻訳やデザインに<br><span class="luxury-accent">コストがかかる</span>
+                    </p>
+                </div>
+                <div class="orange-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-6">🌍</div>
+                    <p class="font-medium text-lg">
+                        海外サイトや接客体制を<br><span class="luxury-accent">整えるのが難しい</span>
+                    </p>
+                </div>
+                <div class="orange-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-6">💬</div>
+                    <p class="font-medium text-lg">
+                        海外からの問い合わせに<br><span class="luxury-accent">英語で対応できない</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Overview Section -->
+    <section class="bg-white py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">
+                TerroirHubなら解決できます
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-blue-50 p-8 rounded-xl">
+                    <div class="bg-blue-900 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold mb-4">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        英語カタログの無料制作
+                    </h3>
+                    <p class="text-gray-700 mb-2">
+                        御社の商品を英語で分かりやすく表現
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        海外バイヤーや消費者に伝わるオンラインカタログを作成
+                    </p>
+                </div>
+                <div class="bg-pink-50 p-8 rounded-xl">
+                    <div class="bg-pink-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold mb-4">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        海外専用公式サイト制作
+                    </h3>
+                    <p class="text-gray-700 text-sm">
+                        海外市場に特化したデザイン・機能・決済システムを実装
+                    </p>
+                </div>
+                <div class="bg-green-50 p-8 rounded-xl">
+                    <div class="bg-green-700 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold mb-4">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        Instagramでの海外プロモーション
+                    </h3>
+                    <p class="text-gray-700 text-sm">
+                        海外のターゲット層に直接リーチし、購入・商談に繋げる
+                    </p>
+                </div>
+                <div class="bg-yellow-50 p-8 rounded-xl">
+                    <div class="bg-yellow-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold mb-4">
+                        4
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        海外輸出サポート
+                    </h3>
+                    <p class="text-gray-700 mb-2">
+                        ドバイ拠点を活かし、海外インポーターやレストラン、ショップへ営業
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        日本メーカーの代わりに「海外での窓口」として活動
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Benefits Section -->
+    <section class="bg-white py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">
+                生産者のメリット
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center bg-yellow-50 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">
+                        低コストで海外市場へアプローチ
+                    </h3>
+                    <p class="text-gray-600 text-sm">
+                        大規模な投資不要で海外展開をスタートできます
+                    </p>
+                </div>
+                <div class="text-center bg-red-50 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">🚫</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">
+                        英語対応不要
+                    </h3>
+                    <p class="text-gray-600 text-sm">
+                        英語カタログを制作、海外対応サポートいたします。
+                    </p>
+                </div>
+                <div class="text-center bg-blue-50 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">
+                        海外に「自社の公式サイト」
+                    </h3>
+                    <p class="text-gray-600 text-sm">
+                        本格的な多言語サイトから簡易カタログまで選択可能
+                    </p>
+                </div>
+                <div class="text-center bg-green-50 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">
+                        将来の輸出・販路拡大に繋がる
+                    </h3>
+                    <p class="text-gray-600 text-sm">
+                        海外展開の第一歩を着実に踏み出せます
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="elegant-section px-4">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="elegant-title text-4xl text-center mb-16">
+                <span class="luxury-accent">料金</span>プラン
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- ライトプラン -->
+                <div class="price-tag">
+                    <h3 class="elegant-title text-2xl mb-4">ライトプラン</h3>
+                    <div class="text-4xl font-bold mb-2" style="color: var(--orange-dark);">30万円</div>
+                    <div class="text-sm opacity-70 mb-6">（税抜き）</div>
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            多言語カタログ（２言語）
+                        </li>
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            海外版LP制作
+                        </li>
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            簡易デザイン調整
+                        </li>
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            初期導入サポート
+                        </li>
                     </ul>
+                </div>
+
+                <!-- スタンダードプラン（強調） -->
+                <div class="price-tag transform scale-105 relative">
+                    <div class="premium-badge">
+                        おすすめ
+                    </div>
+                    <h3 class="elegant-title text-2xl mb-4">スタンダードプラン</h3>
+                    <div class="text-4xl font-bold mb-2" style="color: var(--orange-dark);">50万円</div>
+                    <div class="text-sm opacity-70 mb-6">（税抜き）</div>
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            多言語カタログ（主要5言語）
+                        </li>
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            海外版ホームページ制作
+                        </li>
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            専用チャットボット（32言語対応）
+                        </li>
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            翻訳チェック＋トレーニング
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- プレミアムプラン -->
+                <div class="price-tag">
+                    <h3 class="elegant-title text-2xl mb-4">プレミアムプラン</h3>
+                    <div class="text-4xl font-bold mb-2" style="color: var(--orange-dark);">70万円</div>
+                    <div class="text-sm opacity-70 mb-6">（税抜き）</div>
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            多言語カタログ（主要5言語）
+                        </li>
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            海外版ホームページ制作
+                        </li>
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            専用チャットボット（多言語対応）
+                        </li>
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            決済システム連携
+                        </li>
+                        <li class="flex items-start">
+                            <span class="luxury-accent mr-3 text-xl">✦</span>
+                            できる限りのカスタマイズ
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- IT導入補助金セクション -->
+            <div class="mt-16 bg-blue-50 rounded-lg p-8">
+                <h3 class="text-2xl font-bold text-blue-900 text-center mb-8">
+                    IT導入補助金を導入すると
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-white p-6 rounded-lg">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">ライトプラン</h4>
+                        <div class="text-2xl font-bold text-blue-900 mb-2">30万円 → 10万円</div>
+                        <div class="text-green-700 font-semibold">実質負担額 66%削減</div>
+                    </div>
+                    <div class="bg-orange-100 p-6 rounded-lg border-2 border-orange-400">
+                        <div class="bg-orange-400 text-white px-3 py-1 rounded-full text-sm font-bold inline-block mb-2">
+                            おすすめ
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">スタンダードプラン</h4>
+                        <div class="text-2xl font-bold text-blue-900 mb-2">50万円 → 17万円</div>
+                        <div class="text-green-700 font-semibold">実質負担額 66%削減</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">プレミアムプラン</h4>
+                        <div class="text-2xl font-bold text-blue-900 mb-2">100万円 → 34万円</div>
+                        <div class="text-green-700 font-semibold">実質負担額 66%削減</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Flow Section -->
+    <section class="bg-white py-16 px-4">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-16">
+                2つの導入パターンからお選びいただけます
+            </h2>
+            
+            <!-- 2つのフロー比較 -->
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- 通常導入フロー -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="text-center mb-8">
+                        <div class="bg-blue-900 text-white px-6 py-3 rounded-full text-lg font-bold inline-block mb-4">
+                            通常導入パターン
+                        </div>
+                        <p class="text-gray-600">スピード重視でお急ぎの方におすすめ</p>
+                    </div>
                     
-                    <div class="hero-cta">
-                        <a href="pricing.html" class="btn btn-primary">
-                            無料で始める
-                        </a>
-                        <a href="mailto:fomus.official@gmail.com?subject=サービス詳細について" class="btn btn-secondary">
-                            詳しく相談する
-                        </a>
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
+                                1
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                                    無料相談申込み
+                                </h3>
+                                <p class="text-gray-600 text-sm">
+                                    フォームからご相談内容や商品情報を送信
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
+                                2
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                                    契約＋ご入金
+                                </h3>
+                                <p class="text-gray-600 text-sm">
+                                    内容に応じて契約を締結、制作前に全額お振込み
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
+                                3
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                                    制作（約4週間）
+                                </h3>
+                                <p class="text-gray-600 text-sm">
+                                    ホームページ・多言語カタログ・チャットボットを構築
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
+                                4
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                                    納品・検収 → 完了
+                                </h3>
+                                <p class="text-gray-600 text-sm">
+                                    完成したサービスをお納めして完了
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="hero-visual">
-                    <div class="hero-card">
-                        <span class="hero-card-icon">🌍</span>
-                        <h3>世界への第一歩</h3>
-                        <p>酒造・食品・工芸メーカーが海外進出を成功させるための、シンプルで確実なソリューション</p>
+                <!-- IT導入補助金活用フロー -->
+                <div class="bg-green-50 rounded-xl p-8 border-2 border-green-200">
+                    <div class="text-center mb-8">
+                        <div class="bg-green-700 text-white px-6 py-3 rounded-full text-lg font-bold inline-block mb-2">
+                            ✅ IT導入補助金活用パターン
+                        </div>
+                        <div class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-bold inline-block mb-4">
+                            おすすめ・最大66%削減
+                        </div>
+                        <p class="text-gray-600">補助金でコストを大幅削減したい方におすすめ</p>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="bg-green-700 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
+                                1
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                                    無料相談申込み
+                                </h3>
+                                <p class="text-gray-600 text-sm">
+                                    フォームからご相談内容や商品情報を送信
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-700 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
+                                2
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                                    補助金申請サポート＋採択決定
+                                </h3>
+                                <p class="text-gray-600 text-sm">
+                                    採択後に契約を締結、制作前に全額お振込み
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-700 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
+                                3
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                                    制作（約4週間）
+                                </h3>
+                                <p class="text-gray-600 text-sm">
+                                    ご入金確認後に制作スタート
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-700 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
+                                4
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                                    納品・検収 → 実績報告
+                                </h3>
+                                <p class="text-gray-600 text-sm">
+                                    必要書類（契約書・請求書・納品確認書など）を提出
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-700 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold mr-4 flex-shrink-0">
+                                5
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                                    補助金の交付
+                                </h3>
+                                <p class="text-gray-600 text-sm">
+                                    事業実績報告が承認され、後日クライアント口座に補助金が振込
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </header>
-
-        <!-- 悩み -->
-        <section class="section problems">
-            <h2>こんなお悩みありませんか？</h2>
-            <ul class="problem-list">
-                <li>😰 海外から問い合わせが来ても<strong>英語で説明できない</strong></li>
-                <li>📱 自社サイトはあるけど、<strong>海外のお客様に届いていない</strong></li>
-                <li>🌍 輸出に挑戦したいが、<strong>何から始めれば良いか分からない</strong></li>
-                <li>📺 広告を打ちたいが、<strong>信頼できる運用先がない</strong></li>
-            </ul>
-        </section>
-
-        <!-- 解決策 -->
-        <section class="section solutions">
-            <div class="section-icon">✅</div>
-            <h2>テロワールハブなら解決できます</h2>
-            <ul class="solution-list">
-                <li>
-                    <span class="solution-number">1</span>
-                    <div class="solution-title">英語カタログの無料制作</div>
-                    <div class="solution-description">
-                        御社の商品を英語で分かりやすく表現<br>
-                        海外バイヤーや消費者に伝わるオンラインカタログを作成
-                    </div>
-                </li>
-                <li>
-                    <span class="solution-number">2</span>
-                    <div class="solution-title">Instagramでの海外プロモーション</div>
-                    <div class="solution-description">
-                        海外のターゲット層に直接リーチし、購入・商談に繋げる
-                    </div>
-                </li>
-                <li>
-                    <span class="solution-number">3</span>
-                    <div class="solution-title">海外専用公式サイト制作</div>
-                    <div class="solution-description">
-                        海外市場に特化したデザイン・機能・決済システムを実装
-                    </div>
-                </li>
-                <li>
-                    <span class="solution-number">4</span>
-                    <div class="solution-title">海外輸出サポート</div>
-                    <div class="solution-description">
-                        ドバイ拠点を活かし、海外インポーターやレストラン、ショップへ営業<br>
-                        日本メーカーの代わりに「海外での窓口」として活動
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <!-- 料金 -->
-        <section class="section pricing">
-            <div class="section-icon">📊</div>
-            <h2>料金モデル</h2>
-            <div class="price-grid">
-                <div class="price-item">
-                    <div class="price-title">カタログ登録</div>
-                    <div class="price-amount">無料</div>
-                    <div class="price-note">英語カタログ制作・掲載</div>
-                </div>
-                <div class="price-item">
-                    <div class="price-title">Instagram広告運用</div>
-                    <div class="price-amount">10万円〜</div>
-                    <div class="price-note">広告費・運用費込み</div>
-                </div>
-                <div class="price-item">
-                    <div class="price-title">海外専用公式サイト</div>
-                    <div class="price-amount">20万円〜</div>
-                    <div class="price-note">多言語・決済・本格サイト</div>
-                </div>
-                <div class="price-item">
-                    <div class="price-title">オプション</div>
-                    <div class="price-amount">相談</div>
-                    <div class="price-note">海外輸出サポート・商談マッチング</div>
-                </div>
+            
+            <!-- 注意書き -->
+            <div class="text-center mt-12 p-6 bg-blue-50 rounded-lg">
+                <p class="text-gray-700">
+                    <span class="font-bold text-blue-900">どちらのパターンも最短1ヶ月で導入可能</span><br>
+                    補助金活用の場合は申請期間が別途必要ですが、制作期間は同じです
+                </p>
             </div>
-            <div class="highlight-box">
-                <div class="highlight-text">👉 初期費用ゼロで始められ、必要に応じて拡張できます。</div>
-            </div>
-            <div class="section-cta">
-                <a href="pricing.html" class="btn-detail">詳しく見る</a>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- メリット -->
-        <section class="section benefits">
-            <div class="section-icon">🎯</div>
-            <h2>生産者のメリット</h2>
-            <div class="benefit-grid">
-                <div class="benefit-item">
-                    <span class="benefit-icon">💰</span>
-                    <div class="benefit-title">低コストで海外市場へアプローチ</div>
-                    <div>大規模な投資不要で海外展開をスタートできます</div>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-icon">🚫</span>
-                    <div class="benefit-title">英語対応不要</div>
-                    <div>英語カタログを制作、海外対応サポートいたします。</div>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-icon">🌐</span>
-                    <div class="benefit-title">海外に「自社の公式サイト」</div>
-                    <div>本格的な多言語サイトから簡易カタログまで選択可能</div>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-icon">🚀</span>
-                    <div class="benefit-title">将来の輸出・販路拡大に繋がる</div>
-                    <div>海外展開の第一歩を着実に踏み出せます</div>
-                </div>
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 py-16 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-8">
+                よくあるご質問
+            </h2>
+            
+            <!-- 無料相談ボタン -->
+            <div class="text-center mb-12">
+                <p class="text-gray-600 mb-6">お困りのことがございましたら、お気軽にご相談ください</p>
+                <button class="orange-button" onclick="scrollToForm()">
+                    ✨ 無料相談をする
+                </button>
             </div>
-        </section>
-
-        <!-- 対象ジャンル -->
-        <section class="section">
-            <div class="section-icon">🌍</div>
-            <h2>対象ジャンル</h2>
-            <div class="categories">
-                <div class="category-item">
-                    <span class="category-icon">🍶</span>
-                    <div class="category-name">酒造</div>
-                    <div class="category-examples">日本酒・焼酎・ワインなど</div>
-                </div>
-                <div class="category-item">
-                    <span class="category-icon">🍱</span>
-                    <div class="category-name">食品</div>
-                    <div class="category-examples">和菓子・お茶・調味料など</div>
-                </div>
-                <div class="category-item">
-                    <span class="category-icon">🏺</span>
-                    <div class="category-name">工芸</div>
-                    <div class="category-examples">陶器・漆器・アクセサリーなど</div>
-                </div>
-                <div class="category-item">
-                    <span class="category-icon">🏠</span>
-                    <div class="category-name">ライフスタイル</div>
-                    <div class="category-examples">家具・テキスタイルなど</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 利用の流れ -->
-        <section class="section">
-            <div class="section-icon">🚀</div>
-            <h2>ご利用の流れ</h2>
-            <div class="flow-steps">
-                <div class="flow-step">
-                    <div class="step-number">1</div>
-                    <div class="step-title">お問い合わせ</div>
-                </div>
-                <div class="flow-step">
-                    <div class="step-number">2</div>
-                    <div class="step-title">商品情報のヒアリング</div>
-                </div>
-                <div class="flow-step">
-                    <div class="step-number">3</div>
-                    <div class="step-title">英語カタログ制作（無料）</div>
-                </div>
-                <div class="flow-step">
-                    <div class="step-number">4</div>
-                    <div class="step-title">Instagramでの発信（希望者のみ）</div>
-                </div>
-                <div class="flow-step">
-                    <div class="step-number">5</div>
-                    <div class="step-title">海外からの問い合わせ・商談へ</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta-section">
-            <div class="cta-title">📩 まずはお気軽にご相談ください</div>
-            <p>御社の商品を世界に届けるお手伝いをします。<br>
-            まずは無料カタログ制作から始めませんか？</p>
-            <div class="cta-buttons">
-                <a href="mailto:fomus.official@gmail.com?subject=%E3%80%90%E3%83%86%E3%83%AD%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%8F%E3%83%96%E3%80%91%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&body=%E3%80%90%E4%BC%9A%E7%A4%BE%E6%83%85%E5%A0%B1%E3%80%91%0A%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E3%81%94%E6%8B%85%E5%BD%93%E8%80%85%E5%90%8D%EF%BC%9A%0A%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%EF%BC%9A%0A%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0A%0A%E3%80%90%E3%81%94%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9%E3%80%91%0A%E2%98%90%20%E7%84%A1%E6%96%99%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0%E5%88%B6%E4%BD%9C%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%0A%E2%98%90%20%E6%B5%B7%E5%A4%96%E3%82%B5%E3%82%A4%E3%83%88%E5%88%B6%E4%BD%9C%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%0A%E2%98%90%20%E5%BA%83%E5%91%8A%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%0A%E2%98%90%20%E3%81%9D%E3%81%AE%E4%BB%96%0A%0A%E3%80%90%E8%A9%B3%E7%B4%B0%E3%80%91%0A%0A%0A%E3%80%90%E5%B8%8C%E6%9C%9B%E9%80%A3%E7%B5%A1%E6%96%B9%E6%B3%95%E3%80%91%0A%E2%98%90%20%E3%83%A1%E3%83%BC%E3%83%AB%0A%E2%98%90%20%E9%9B%BB%E8%A9%B1%0A%E2%98%90%20%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E4%BC%9A%E8%AD%B0%EF%BC%88Zoom%E7%AD%89%EF%BC%89" class="btn btn-primary">
-                    まずは無料相談する
-                </a>
-            </div>
-        </section>
-
-        <!-- フッター -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-title">サンプル</div>
-                    <div class="footer-link">
-                        <a href="catalog-sample.html">カタログサンプルを見る</a>
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(0)">
+                        <h3 class="font-semibold text-gray-900">
+                            Q. 補助金は誰が受け取りますか？
+                        </h3>
+                        <span class="text-blue-900 font-bold text-xl" id="faq-icon-0">+</span>
+                    </button>
+                    <div class="px-6 pb-4 hidden" id="faq-content-0">
+                        <p class="text-gray-700 border-l-4 border-blue-900 pl-4">
+                            A. お客様の口座に交付されます。FOMUSには納品後に全額お支払い頂きます。
+                        </p>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <div class="footer-title">お問い合わせ</div>
-                    <div>📧 fomus.official@gmail.com</div>
-                    <div>📞 営業時間：平日 9:00-18:00</div>
+                
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(1)">
+                        <h3 class="font-semibold text-gray-900">
+                            Q. 納期はどれくらいですか？
+                        </h3>
+                        <span class="text-blue-900 font-bold text-xl" id="faq-icon-1">+</span>
+                    </button>
+                    <div class="px-6 pb-4 hidden" id="faq-content-1">
+                        <p class="text-gray-700 border-l-4 border-blue-900 pl-4">
+                            A. 要件確定後、最短1ヶ月です。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(2)">
+                        <h3 class="font-semibold text-gray-900">
+                            Q. 修正はどうなりますか？
+                        </h3>
+                        <span class="text-blue-900 font-bold text-xl" id="faq-icon-2">+</span>
+                    </button>
+                    <div class="px-6 pb-4 hidden" id="faq-content-2">
+                        <p class="text-gray-700 border-l-4 border-blue-900 pl-4">
+                            A. 1回1万円で承ります。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(3)">
+                        <h3 class="font-semibold text-gray-900">
+                            Q. どのような商品に対応していますか？
+                        </h3>
+                        <span class="text-blue-900 font-bold text-xl" id="faq-icon-3">+</span>
+                    </button>
+                    <div class="px-6 pb-4 hidden" id="faq-content-3">
+                        <p class="text-gray-700 border-l-4 border-blue-900 pl-4">
+                            A. 日本酒、工芸品、食品など、日本の伝統的な商品を中心に幅広く対応しております。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="orange-gradient py-24 px-4" id="contact-form">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="elegant-title text-4xl text-white text-center mb-12">
+                まずはお気軽に<span style="color: var(--gold);">ご相談</span>ください
+            </h2>
+            <div class="elegant-form">
+                <form id="contactForm" onsubmit="handleSubmit(event)" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="companyName" class="block text-sm font-medium text-gray-700 mb-2">
+                                会社名 <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="companyName" name="companyName" required
+                                class="elegant-input w-full">
+                        </div>
+                        <div>
+                            <label for="contactName" class="block text-sm font-medium text-gray-700 mb-2">
+                                担当者名 <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="contactName" name="contactName" required
+                                class="elegant-input w-full">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                メールアドレス <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" required
+                                class="elegant-input w-full">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                                電話番号 <span class="text-red-500">*</span>
+                            </label>
+                            <input type="tel" id="phone" name="phone" required
+                                class="elegant-input w-full">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="productCategory" class="block text-sm font-medium text-gray-700 mb-2">
+                            商品ジャンル <span class="text-red-500">*</span>
+                        </label>
+                        <select id="productCategory" name="productCategory" required
+                            class="elegant-input w-full">
+                            <option value="">選択してください</option>
+                            <option value="sake">日本酒</option>
+                            <option value="craft">工芸品</option>
+                            <option value="food">食品</option>
+                            <option value="tea">茶</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="notes" class="block text-sm font-medium text-gray-700 mb-2">
+                            備考
+                        </label>
+                        <textarea id="notes" name="notes" rows="4"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent"
+                            placeholder="ご質問やご要望があればお聞かせください"></textarea>
+                    </div>
+
+                    <button type="submit" class="orange-button w-full py-4 text-lg">
+                        ✨ 無料相談する
+                    </button>
+                </form>
+
+                <!-- サンクスメッセージ -->
+                <div id="thankYouMessage" class="hidden text-center">
+                    <div class="text-4xl mb-4">✅</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                        お申込みありがとうございました
+                    </h3>
+                    <p class="text-gray-700">
+                        2営業日以内に担当者よりご連絡いたします。<br>
+                        まずは無料カタログの制作から始めさせていただきます。
+                    </p>
                 </div>
             </div>
-        </footer>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-footer py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div>
+                    <h3 class="elegant-title text-xl mb-4" style="color: var(--orange-light);">会社情報</h3>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <div>合同会社FOMUS</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="elegant-title text-xl mb-4" style="color: var(--orange-light);">サービス</h3>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <div><a href="catalog-sample.html" class="cursor-pointer hover:text-white transition-colors">✦ カタログサンプルを見る</a></div>
+                        <div>✦ 多言語対応サービス</div>
+                        <div>✦ 海外展開支援</div>
+                        <div><a href="javascript:void(0)" onclick="showModal('instagram')" class="cursor-pointer hover:text-white transition-colors">✦ Instagramでの海外プロモーション</a></div>
+                        <div><a href="javascript:void(0)" onclick="showModal('export')" class="cursor-pointer hover:text-white transition-colors">✦ 海外輸出サポート</a></div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="elegant-title text-xl mb-4" style="color: var(--orange-light);">お問い合わせ</h4>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <div>💎 fomus.official@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 pt-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="text-gray-400 text-xs space-y-1">
+                        <div>© 2024 合同会社FOMUS. All rights reserved.</div>
+                        <div>本サイトはIT導入補助金対象ツールです</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="space-x-4 text-gray-400 text-xs">
+                            <a href="javascript:void(0)" onclick="showModal('privacy')" class="hover:text-white transition-colors cursor-pointer">プライバシーポリシー</a>
+                            <a href="javascript:void(0)" onclick="showModal('terms')" class="hover:text-white transition-colors cursor-pointer">利用規約</a>
+                            <a href="javascript:void(0)" onclick="showModal('commerce')" class="hover:text-white transition-colors cursor-pointer">特定商取引法に基づく表記</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- プライバシーポリシーモーダル -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">プライバシーポリシー</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h3>個人情報の取扱いについて</h3>
+                <p>合同会社FOMUS（以下「当社」）は、お客様の個人情報保護の重要性を認識し、以下のとおりプライバシーポリシーを定めます。</p>
+                
+                <h3>1. 個人情報の収集</h3>
+                <p>当社では、お客様から以下の個人情報を収集させていただく場合があります：</p>
+                <p>・氏名、会社名<br>・メールアドレス<br>・電話番号<br>・その他サービス提供に必要な情報</p>
+                
+                <h3>2. 個人情報の利用目的</h3>
+                <p>収集した個人情報は以下の目的で利用いたします：</p>
+                <p>・サービスの提供<br>・お客様からのお問い合わせへの対応<br>・新サービスのご案内</p>
+                
+                <h3>3. 個人情報の第三者提供</h3>
+                <p>法令に基づく場合を除き、お客様の同意なく第三者に個人情報を提供することはありません。</p>
+                
+                <h3>4. お問い合わせ窓口</h3>
+                <p>個人情報に関するお問い合わせは、下記までご連絡ください：<br>fomus.official@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 利用規約モーダル -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">利用規約</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h3>第1条（適用）</h3>
+                <p>本規約は、合同会社FOMUS（以下「当社」）が提供するTerroirHubサービス（以下「本サービス」）の利用条件を定めるものです。</p>
+                
+                <h3>第2条（利用登録）</h3>
+                <p>利用登録は、利用希望者が本規約に同意の上、当社が定める方法によって利用登録の申請を行い、当社がこれを承認することで完了します。</p>
+                
+                <h3>第3条（禁止事項）</h3>
+                <p>利用者は、本サービスの利用にあたり、以下の行為をしてはなりません：</p>
+                <p>・法令または公序良俗に違反する行為<br>・犯罪行為に関連する行為<br>・当社のサーバーまたはネットワークの機能を破壊したり、妨害したりする行為<br>・その他、当社が不適切と判断する行為</p>
+                
+                <h3>第4条（本サービスの提供の停止等）</h3>
+                <p>当社は、以下のいずれかの事由があると判断した場合、利用者に事前に通知することなく本サービスの全部または一部の提供を停止または中断することができます。</p>
+                
+                <h3>第5条（免責事項）</h3>
+                <p>当社は、本サービスに関して、利用者と他の利用者または第三者との間において生じた取引、連絡または紛争等について一切責任を負いません。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 特定商取引法モーダル -->
+    <div id="commerceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">特定商取引法に基づく表記</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h3>販売業者</h3>
+                <p>合同会社FOMUS</p>
+                
+                <h3>代表責任者</h3>
+                <p>増尾圭亮</p>
+                
+                <h3>所在地</h3>
+                <p>日本</p>
+                
+                <h3>販売価格</h3>
+                <p>各プランページに記載された金額（税抜き）</p>
+                
+                <h3>商品代金以外の必要料金</h3>
+                <p>消費税、銀行振込手数料（お客様負担）</p>
+                
+                <h3>支払方法</h3>
+                <p>銀行振込</p>
+                
+                <h3>支払時期</h3>
+                <p>サービス開始前の前払い</p>
+                
+                <h3>サービス提供時期</h3>
+                <p>入金確認後、約4週間</p>
+                
+                <h3>返品・キャンセル</h3>
+                <p>サービスの性質上、原則として返品・キャンセルはお受けできません。ただし、当社の責に帰すべき事由がある場合はこの限りではありません。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instagramプロモーションモーダル -->
+    <div id="instagramModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Instagramでの海外プロモーション</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h3>海外のターゲット層に直接リーチ</h3>
+                <p>TerroirHubのInstagramプロモーションサービスでは、海外の潜在顧客に直接アプローチし、御社の商品の認知度向上と販路拡大をサポートします。</p>
+                
+                <h3>📊 サービス内容</h3>
+                <p><strong>・コンテンツ制作</strong><br>
+                海外向けに最適化された魅力的な投稿コンテンツを制作</p>
+                
+                <p><strong>・ターゲティング広告</strong><br>
+                国別・言語別に最適化されたターゲット広告を配信</p>
+                
+                <p><strong>・ハッシュタグ戦略</strong><br>
+                各国のトレンドに合わせた効果的なハッシュタグを選定</p>
+                
+                <p><strong>・インフルエンサー連携</strong><br>
+                海外の関連インフルエンサーとのコラボレーション企画</p>
+                
+                <h3>🌍 対応地域</h3>
+                <p>・北米（アメリカ・カナダ）<br>
+                ・ヨーロッパ（イギリス・フランス・ドイツ）<br>
+                ・アジア（台湾・香港・シンガポール・タイ）<br>
+                ・オセアニア（オーストラリア・ニュージーランド）</p>
+                
+                <h3>💰 料金</h3>
+                <p>月額15万円〜（税抜き）<br>
+                ※広告費は別途必要です</p>
+                
+                <h3>📈 期待される効果</h3>
+                <p>・海外での商品認知度向上<br>
+                ・直接的な購入・問い合わせの増加<br>
+                ・海外バイヤーからの引き合い<br>
+                ・ブランドイメージの向上</p>
+                
+                <h3>📞 お問い合わせ</h3>
+                <p>詳しい内容や事例については、お気軽にお問い合わせください。<br>
+                fomus.official@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 海外輸出サポートモーダル -->
+    <div id="exportModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">海外輸出サポート</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h3>輸出手続きから物流まで一括サポート</h3>
+                <p>海外輸出に必要な手続きや物流を一括してサポート。複雑な輸出業務を簡素化し、安心して海外展開を進められます。</p>
+                
+                <h3>📋 サービス内容</h3>
+                <p><strong>・輸出許可申請代行</strong><br>
+                必要な輸出許可書類の作成・申請手続きを代行</p>
+                
+                <p><strong>・関税・税務手続き</strong><br>
+                各国の関税制度に対応した税務手続きをサポート</p>
+                
+                <p><strong>・国際物流手配</strong><br>
+                最適な配送ルートと物流業者の選定・手配</p>
+                
+                <p><strong>・現地パートナー紹介</strong><br>
+                信頼できる現地代理店・販売パートナーをご紹介</p>
+                
+                <p><strong>・法規制対応支援</strong><br>
+                輸出先国の法規制や認証取得要件への対応をサポート</p>
+                
+                <h3>🌍 対応地域</h3>
+                <p>・アジア太平洋（中国・台湾・韓国・シンガポール・タイ・ベトナム・オーストラリア）<br>
+                ・北米（アメリカ・カナダ）<br>
+                ・ヨーロッパ（EU諸国・イギリス）<br>
+                ・中東・アフリカ（UAE・サウジアラビア・南アフリカ）</p>
+                
+                <h3>💰 料金</h3>
+                <p><strong>初期設定費用：</strong> 30万円（税抜き）<br>
+                <strong>輸出代行：</strong> 売上の8-12%<br>
+                <strong>コンサルティング：</strong> 月額20万円〜（税抜き）</p>
+                
+                <h3>📈 メリット</h3>
+                <p>・複雑な輸出手続きの簡素化<br>
+                ・物流コストの最適化<br>
+                ・リスク管理の徹底<br>
+                ・現地法規制への確実な対応<br>
+                ・安定した海外販路の構築</p>
+                
+                <h3>📞 お問い合わせ</h3>
+                <p>輸出に関するご相談は、お気軽にお問い合わせください。<br>
+                fomus.official@gmail.com</p>
+            </div>
+        </div>
     </div>
 
     <script>
-        // シンプルなスムーススクロール
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
+        // Modal機能
+        function showModal(type) {
+            let modalId;
+            switch(type) {
+                case 'privacy':
+                    modalId = 'privacyModal';
+                    break;
+                case 'terms':
+                    modalId = 'termsModal';
+                    break;
+                case 'commerce':
+                    modalId = 'commerceModal';
+                    break;
+                case 'instagram':
+                    modalId = 'instagramModal';
+                    break;
+                case 'export':
+                    modalId = 'exportModal';
+                    break;
+            }
+            
+            if (modalId) {
+                document.getElementById(modalId).style.display = 'block';
+                document.body.style.overflow = 'hidden'; // スクロール無効化
+            }
+        }
+
+        function closeModal(modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // スクロール復活
+        }
+
+        // モーダルのクローズボタンとオーバーレイクリックの処理
+        document.addEventListener('DOMContentLoaded', function() {
+            const modals = document.querySelectorAll('.modal');
+            
+            modals.forEach(modal => {
+                // ×ボタンでクローズ
+                const closeBtn = modal.querySelector('.close');
+                if (closeBtn) {
+                    closeBtn.onclick = function() {
+                        closeModal(modal);
+                    }
+                }
+                
+                // モーダル外をクリックでクローズ
+                modal.onclick = function(event) {
+                    if (event.target === modal) {
+                        closeModal(modal);
+                    }
+                }
+            });
+            
+            // ESCキーでクローズ
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    modals.forEach(modal => {
+                        if (modal.style.display === 'block') {
+                            closeModal(modal);
+                        }
                     });
                 }
             });
         });
 
-        // CTAボタンのクリックイベント（アナリティクス用）
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Google Analytics や Meta Pixel イベントをここに追加可能
-                console.log('CTA clicked:', this.textContent);
-            });
-        });
+        // FAQ Toggle機能
+        function toggleFAQ(index) {
+            const content = document.getElementById(`faq-content-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.textContent = '−';
+            } else {
+                content.classList.add('hidden');
+                icon.textContent = '+';
+            }
+        }
+
+        // フォーム送信処理
+        async function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // メール送信データの準備
+            const emailData = {
+                to_email: 'fomus.official@gmail.com',
+                from_name: data.contactName,
+                company_name: data.companyName,
+                contact_name: data.contactName,
+                email: data.email,
+                phone: data.phone,
+                product_category: data.productCategory,
+                notes: data.notes,
+                message: `
+会社名: ${data.companyName}
+担当者名: ${data.contactName}
+メールアドレス: ${data.email}
+電話番号: ${data.phone}
+商品ジャンル: ${data.productCategory}
+備考: ${data.notes}
+                `
+            };
+
+            try {
+                // メール送信のシミュレーション（実際のEmailJS設定が必要）
+                console.log('Sending email to fomus.official@gmail.com:', emailData);
+                
+                // 実際のEmailJS呼び出しの場合：
+                // await emailjs.send('service_id', 'template_id', emailData, 'public_key');
+                
+                // フォームを隠してサンクスメッセージを表示
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('thankYouMessage').classList.remove('hidden');
+            } catch (error) {
+                console.error('Email sending failed:', error);
+                alert('送信に失敗しました。もう一度お試しください。');
+            }
+        }
+
+        // ヒーローセクションのCTAボタンからフォームへスクロール
+        function scrollToForm() {
+            document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
