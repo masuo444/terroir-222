@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://masuo444.github.io/terroir-222/sitemap.xml
+Sitemap: https://www.terroirhub.com/sitemap.xml
 
 # Crawl-delay (optional, in seconds)
 Crawl-delay: 1
